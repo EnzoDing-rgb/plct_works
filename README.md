@@ -1,15 +1,10 @@
 # plct_works
 
-Personal work logs and test reports.
+个人工作记录仓库，主要用于整理阶段性产出
 
-## Structure
+## 目录说明
 
-- `weekly/`: weekly notes and progress updates.
-- `monthly/`: monthly summaries.
-- `reports/`: detailed test reports and experiment records.
+- `weekly/`：周报，记录本周完成事项和进展。
+- `monthly/`：月报，汇总月度工作情况。
+- `reports/`：测试报告和实验记录等详细材料。
 
-## Usage
-
-- Add daily/weekly progress into `weekly/`.
-- Add monthly summaries into `monthly/`.
-- Put detailed technical reports into `reports/` and reference them from weekly notes.
