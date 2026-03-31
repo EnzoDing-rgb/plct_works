@@ -7,3 +7,4 @@
 - 完成开发板 ruyi 工具链示例库文档展示的前端页面，并迭代两次。  
   代码链接：https://github.com/DuoQilai/board-docs-frontend.git
 
+- 产出已在备份仓库提出PR: https://github.com/DuoQilai/ruyisdk-dev-archive/pull/6
