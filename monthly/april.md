@@ -4,6 +4,12 @@
 - 前端网页代码完成了给 VS Code 和 Eclipse 插件团队的消息发送。
 - 针对团队提出的新需求做了 patch。
 - 更新并拉取前端文档仓库和 README。
+- 根据插件侧需求，完善了“仅在 VS Code WebView / Eclipse 内生效”的前端交互：
+  - 通过 userAgent 判断 VS Code（包含 `Code/`）来控制按钮显隐；浏览器环境不展示；Eclipse/VS Code 外也不展示。
+  - 在页面右上角增加按钮「在 VS Code 中使用」；点击后调用 `vscode.postMessage({ type: 'copilot', url, model, profile })` 把当前文档原文 URL 与（从文档属性读取的）开发板型号/示例名称回传给 VS Code。
+- 按要求将网站文档仓库切到 `ruyisdk/board-docs`，并处理目录展示（不显示 `/templates`，用于后续新增模板目录）。
+- 跟进 UI 细节：标签图标替换为 ruyisdk logo。
+- 学习 Electron 桌面开发与 VS Code 插件开发的基本逻辑，更好地理解对方团队需求并协作对齐。
 
 ## 2. 中科院展示日项目
 
