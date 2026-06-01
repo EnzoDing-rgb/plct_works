@@ -1,0 +1,70 @@
+## 1. 中科院公众科学日 · RISC-V 三国杀互动 Demo
+
+### 活动概况
+
+- 参与中科院公众科学日展示活动，现场布展并演示全栈互动应用，活动当天工作量较大。
+- 项目仓库：[OpenSiliconBet](https://github.com/EnzoDing-rgb/OpenSiliconBet) — RISC-V 三国杀 · 指令集 × AI/Agent 时代互动 Demo。
+
+### 项目概述
+
+- 全栈小应用（FastAPI + React/Vite）：论坛交锋形式，设 RISC-V / x86 / ARM 三阵营 + Lex 主持 + 黄仁勋环节 + 观众问答。
+- 面向中关村·公众科学日类科普分会场，不做胜负式辩论，强调科普互动体验。
+
+### 5 月开发迭代
+
+- **5 月 11–13 日：项目启动与基建搭建**
+  - 搭建 FastAPI 后端 + React/Vite 前端骨架。
+  - 接入火山引擎 API（OpenAI 协议），完成 LLM 对话编排。
+  - 完成 deep-research 背景调研与跨源资料整合（`docs/background/`）。
+  - 五嘉宾 perspective SKILL 设计与文档（`docs/characters/`）。
+
+- **5 月 14 日：核心功能成型**
+  - 黄仁勋角色接入并成功发言。
+  - DeepResearch 背景资料补充完善。
+  - 项目初具雏形，跑通完整辩论/论坛流程。
+  - 接入 DashScope TTS（qwen3-tts-vc-realtime），实现五辩手 + 黄仁勋语音合成。
+  - 完成 `.env` 环境变量配置体系与 `.env.example` 模板。
+
+- **5 月 15–16 日：功能打磨与 v0.1 发布**
+  - 完成 EndingScreen 粒子动画结尾页面。
+  - 音量提升 100x + Q&A 独立音频状态机。
+  - 跳过观众问答 + Chat TTS 功能。
+  - 开场视频增强 + Lex 开场白音频音量提升 10 倍。
+  - 修复 Q&A 无音频问题，添加 `noAutoStart` prop。
+  - 发布 v0.1 版本。
+
+- **5 月 17 日：收尾与远程联调**
+  - 远程 pull + merge，完成最终现场可用版本。
+
+### 文档体系
+
+- `docs/design/architecture.md` — 架构宪章
+- `docs/design/implementation.md` — 实现计划与测试策略
+- `docs/design/realtime-tts-architecture.md` — 实时 TTS 架构
+- `docs/background/deep-research.md` — 共享事实背景
+- `docs/characters/` — 五嘉宾视角 SKILL
+- `dev.sh` — 一键本地运行 / Cloudflare Tunnel 生产部署脚本
+- `README.md` — 完整项目文档与使用说明
+
+### 技术栈
+
+- 后端：FastAPI, Uvicorn, OpenAI SDK, DashScope TTS（可选）, WebSocket
+- 前端：React 18, TypeScript, Vite, Vitest
+- 部署：Cloudflare Tunnel；生产可由 FastAPI 单端口托管 `frontend/dist`
+
+---
+
+## 2. RISC-V 嵌入式系统与边缘推理课程大纲
+
+- 项目仓库：[riscv-embedded-course](https://github.com/EnzoDing-rgb/riscv-embedded-course)
+- 完成《RISC-V 嵌入式系统与边缘推理》教学课程仓库初始化与大纲编写。
+- 大纲内容涵盖：
+  - 双机分工架构设计。
+  - Ruyi 工具链在可用场景下的应用说明。
+- 大纲详见 `docs/outline.md`。
+
+---
+
+## 3. 其他
+
+- 中科院展示日活动本身涉及场地布置、设备调试、现场讲解与互动引导，体力与精力消耗较大，属于本月重要投入。
