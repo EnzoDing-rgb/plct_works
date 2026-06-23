@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>03 · LicheePi 4A 测试</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    background: #0a0e1a;
+    font-family: "Noto Serif SC", "PingFang SC", serif;
+    color: #f1f5f9;
+    padding: 85px 120px; position: relative;
+  }
+  .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #2dd4bf, #14b8a6, #0d9488, #2dd4bf); }
+  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #2dd4bf; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+  h2 { font-size: 46px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+  h2 .teal { color: #2dd4bf; }
+  .sub { font-size: 19px; color: #64748b; margin-bottom: 36px; font-family: system-ui, sans-serif; }
+  .content { display: flex; gap: 44px; }
+  .left { flex: 0 0 540px; display: flex; flex-direction: column; gap: 20px; }
+  .info-card {
+    background: rgba(45,212,191,0.04); border: 1px solid rgba(45,212,191,0.1);
+    border-radius: 14px; padding: 24px 30px;
+  }
+  .info-card h4 { font-size: 20px; font-weight: 700; color: #5eead4; margin-bottom: 6px; }
+  .info-card p { font-size: 16px; color: #94a3b8; line-height: 1.65; }
+  .right { flex: 1; }
+  .flow-box {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px; padding: 28px 32px; margin-bottom: 20px;
+  }
+  .flow-box h4 { font-size: 18px; color: #2dd4bf; margin-bottom: 16px; font-family: system-ui, sans-serif; letter-spacing: 0.06em; }
+  .stages { display: flex; gap: 14px; }
+  .stage {
+    flex: 1; background: rgba(45,212,191,0.05); border: 1px solid rgba(45,212,191,0.12);
+    border-radius: 12px; padding: 20px 22px; text-align: center;
+  }
+  .stage .num { font-size: 28px; font-weight: 900; color: #2dd4bf; font-family: system-ui, sans-serif; }
+  .stage .env { font-size: 15px; font-weight: 700; margin: 6px 0; }
+  .stage .detail { font-size: 14px; color: #94a3b8; line-height: 1.5; }
+  .stage .arrow { color: #2dd4bf; font-size: 18px; margin-top: 6px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .tag { font-size: 13px; padding: 6px 14px; border-radius: 999px; background: rgba(45,212,191,0.1); color: #5eead4; font-family: system-ui, sans-serif; }
+  .pr-box {
+    background: rgba(45,212,191,0.04); border: 1px solid rgba(45,212,191,0.1);
+    border-radius: 12px; padding: 20px 28px; text-align: center;
+    font-size: 17px; color: #5eead4; line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="accent-line"></div>
+<div class="section-num">基础验证 · 3 月</div>
+<h2>LicheePi 4A · <span class="teal">RuyiSDK 示例移植与验证</span></h2>
+<div class="sub">三阶段验证：x86 原生 → QEMU RISC-V 仿真 → RevyOS 实机。RuyiSDK 工具链实战闭环。</div>
+<div class="content">
+  <div class="left">
+    <div class="info-card">
+      <h4>Tinn · 200 行 C99 神经网络库</h4>
+      <p>无依赖神经网络库，使用 semeion 手写数字数据集（16×16 像素）进行训练与推理，终端输出误差下降与预测结果。为 RISC-V 嵌入式 AI 推理提供可复现验证用例。</p>
+    </div>
+    <div class="info-card">
+      <h4>RuyiSDK 工具链实战</h4>
+      <p>Ruyi 0.46.0 包管理安装 gnu-plct 工具链 + QEMU riscv64 8.2+，交叉编译 Tinn（-O2 -static），验证 RuyiSDK 统一包管理/版本/路径的标准化流程。</p>
+    </div>
+    <div class="info-card">
+      <h4>交付物</h4>
+      <p>support-matrix PR#2（RevyOS 测试报告）· 完整移植报告 licheepi4a_tinn.md（三阶段命令、输出、验证结果）· ruyisdk-dev-archive PR#6（备份归档）</p>
+    </div>
+  </div>
+  <div class="right">
+    <div class="flow-box">
+      <h4>三阶段验证流水线</h4>
+      <div class="stages">
+        <div class="stage">
+          <div class="num">①</div>
+          <div class="env">x86_64 Linux</div>
+          <div class="detail">gcc + make<br>原生编译运行<br>error 明显下降<br>预测向量正常</div>
+          <div class="arrow">↓ 通过</div>
+        </div>
+        <div class="stage">
+          <div class="num">②</div>
+          <div class="env">QEMU RISC-V</div>
+          <div class="detail">Ruyi gnu-plct 交叉编译<br>qemu-riscv64 仿真<br>训练过程正常<br>无硬件即可验证</div>
+          <div class="arrow">↓ 通过</div>
+        </div>
+        <div class="stage">
+          <div class="num">③</div>
+          <div class="env">LicheePi 4A</div>
+          <div class="detail">TH1520 · RevyOS<br>Debian 13 riscv64<br>kernel 6.6.119<br>scp 部署运行</div>
+        </div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">RuyiSDK 0.46.0</span><span class="tag">gnu-plct 工具链</span><span class="tag">QEMU 8.2+</span>
+      <span class="tag">LicheePi 4A (TH1520)</span><span class="tag">RevyOS</span>
+      <span class="tag">C99 神经网络</span><span class="tag">交叉编译</span>
+    </div>
+    <div class="pr-box" style="margin-top:14px;">
+      PR: DuoQilai/support-matrix#2 · 报告: reports/licheepi4a_tinn.md
+    </div>
+  </div>
+</div>
+</body>
+</html>
