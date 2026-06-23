@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>02 · 工作全景</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    background: #0a0e1a;
+    font-family: "Noto Serif SC", "PingFang SC", serif;
+    color: #f1f5f9;
+    display: flex; align-items: center;
+    position: relative; padding: 100px 120px;
+  }
+  .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #f0b429, #f59e0b, #d97706, #f0b429); }
+  .left { flex: 0 0 520px; }
+  h2 { font-size: 64px; font-weight: 900; line-height: 1.2; margin-bottom: 32px; }
+  h2 .gold { color: #f0b429; }
+  .sub { font-size: 22px; color: #94a3b8; line-height: 1.7; }
+  .right { flex: 1; display: flex; flex-wrap: wrap; gap: 28px; margin-left: 80px; }
+  .card {
+    flex: 0 0 calc(50% - 14px); background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;
+    padding: 36px 40px; position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+    border-radius: 4px 0 0 4px;
+  }
+  .card:nth-child(1)::before { background: #f0b429; }
+  .card:nth-child(2)::before { background: #2dd4bf; }
+  .card:nth-child(3)::before { background: #a78bfa; }
+  .card:nth-child(4)::before { background: #f472b6; }
+  .card .month { font-size: 15px; letter-spacing: 0.15em; text-transform: uppercase; color: #64748b; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+  .card h3 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+  .card p { font-size: 17px; color: #94a3b8; line-height: 1.6; }
+  .stat-row { display: flex; gap: 36px; margin-top: 18px; }
+  .stat { text-align: center; }
+  .stat .num { font-size: 36px; font-weight: 900; color: #f0b429; font-family: system-ui, sans-serif; }
+  .stat .lbl { font-size: 13px; color: #64748b; margin-top: 4px; font-family: system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<div class="accent-line"></div>
+<div class="left">
+  <h2>四月<span class="gold">工作</span><br>全景图</h2>
+  <div class="sub">从底层测试到全栈应用，从 LLM 基础设施到课程体系建设，横跨 5 个代码仓库的工程实践。</div>
+</div>
+<div class="right">
+  <div class="card">
+    <div class="month">2026 · 03</div>
+    <h3>基础验证 + 前端搭建</h3>
+    <p>LicheePi 4A 系统测试 · board-docs 站点从零搭建 · 多维度导航搜索</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">3</div><div class="lbl">PR/报告</div></div>
+      <div class="stat"><div class="num">2</div><div class="lbl">迭代</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="month">2026 · 04</div>
+    <h3>前端深化 + Demo 设计 + LLM</h3>
+    <p>VS Code/Eclipse 插件集成 · 中科院辩论 Demo · A800 大模型推理优化</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">5+</div><div class="lbl">项目/方案</div></div>
+      <div class="stat"><div class="num">2</div><div class="lbl">迭代</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="month">2026 · 05</div>
+    <h3>公众科学日 · 三国杀 Demo</h3>
+    <p>FastAPI + React 全栈 · 语音交互闭环 · 现场布展 · 课程大纲启动</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">v0.1</div><div class="lbl">发布</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">角色/AI</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="month">2026 · 06</div>
+    <h3>课程成熟 + CI 体系</h3>
+    <p>16 次大纲迭代 · GitHub Pages 发布 · Cloudflare 分析 · 自动化 CI 闭环</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">26</div><div class="lbl">Commits</div></div>
+      <div class="stat"><div class="num">2</div><div class="lbl">仓库</div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

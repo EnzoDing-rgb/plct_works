@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>04 · 4月</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    background: #0a0e1a;
+    font-family: "Noto Serif SC", "PingFang SC", serif;
+    color: #f1f5f9;
+    display: flex; align-items: center;
+    position: relative; padding: 100px 120px;
+  }
+  .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #2dd4bf, #14b8a6, #0d9488, #2dd4bf); }
+  .left { flex: 0 0 460px; }
+  .month-tag { font-size: 15px; letter-spacing: 0.2em; color: #2dd4bf; text-transform: uppercase; font-family: system-ui, sans-serif; margin-bottom: 20px; }
+  h2 { font-size: 64px; font-weight: 900; line-height: 1.15; margin-bottom: 32px; }
+  h2 .teal { color: #2dd4bf; }
+  .divider { width: 80px; height: 3px; background: #2dd4bf; margin-bottom: 32px; }
+  .sub { font-size: 22px; color: #94a3b8; line-height: 1.7; }
+  .right { flex: 1; margin-left: 70px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 24px; }
+  .card {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: 30px 36px;
+  }
+  .card.full { grid-column: 1 / -1; }
+  .card h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+  .card .accent { color: #2dd4bf; font-size: 14px; letter-spacing: 0.08em; font-family: system-ui, sans-serif; margin-bottom: 10px; }
+  .card ul { list-style: none; }
+  .card li { font-size: 16px; color: #94a3b8; line-height: 1.7; padding-left: 18px; position: relative; }
+  .card li::before { content: '·'; position: absolute; left: 0; color: #2dd4bf; font-weight: bold; }
+  .highlight-box {
+    grid-column: 1 / -1; background: rgba(45,212,191,0.06);
+    border: 1px solid rgba(45,212,191,0.2); border-radius: 14px;
+    padding: 28px 36px; display: flex; align-items: center; gap: 28px;
+  }
+  .highlight-box .icon { font-size: 48px; }
+  .highlight-box .text { font-size: 20px; color: #5eead4; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="accent-line"></div>
+<div class="left">
+  <div class="month-tag">April · 2026</div>
+  <h2>前端深化<br><span class="teal">Demo 设计</span><br>LLM 基础设施</h2>
+  <div class="divider"></div>
+  <div class="sub">三线并行推进，覆盖前端、AI 应用与底层推理服务。</div>
+</div>
+<div class="right">
+  <div class="card">
+    <div class="accent">BOARD-DOCS-FRONTEND</div>
+    <h3>插件集成 + UI 打磨</h3>
+    <ul>
+      <li>VS Code / Eclipse 插件 postMessage 集成</li>
+      <li>userAgent 检测控制按钮显隐</li>
+      <li>子模块迁移至 ruyisdk/board-docs</li>
+      <li>RuyiSDK favicon + 侧栏品牌化</li>
+      <li>两轮迭代完成 20+ commits</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="accent">中科院展示日</div>
+    <h3>辩论 Demo 设计 + 5 方案</h3>
+    <ul>
+      <li>RISC-V 开发板跑 openEuler 全栈应用</li>
+      <li>双 AI 学者 3 轮辩论（杰维斯 vs 米尔斯海默）</li>
+      <li>提出 5 个备选互动方案（画画/推理桌/文风万花筒/天价废话/真假鉴定）</li>
+    </ul>
+  </div>
+  <div class="highlight-box">
+    <div class="icon">🖥️</div>
+    <div class="text"><strong>A800 大模型推理优化</strong> — Docker 直通 GPU · Qwen3.5-27B BF16 · KV Cache FP8 近似并发翻倍 · vLLM 全链路调优 · 稳定优先 FP8+MTP 生产方案</div>
+  </div>
+</div>
+</body>
+</html>

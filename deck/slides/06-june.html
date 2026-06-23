@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>06 · 6月</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    background: #0a0e1a;
+    font-family: "Noto Serif SC", "PingFang SC", serif;
+    color: #f1f5f9;
+    display: flex; align-items: center;
+    position: relative; padding: 100px 120px;
+  }
+  .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #f472b6, #ec4899, #db2777, #f472b6); }
+  .left { flex: 0 0 460px; }
+  .month-tag { font-size: 15px; letter-spacing: 0.2em; color: #f472b6; text-transform: uppercase; font-family: system-ui, sans-serif; margin-bottom: 20px; }
+  h2 { font-size: 64px; font-weight: 900; line-height: 1.15; margin-bottom: 32px; }
+  h2 .pink { color: #f472b6; }
+  .divider { width: 80px; height: 3px; background: #f472b6; margin-bottom: 32px; }
+  .sub { font-size: 22px; color: #94a3b8; line-height: 1.7; }
+  .right { flex: 1; margin-left: 70px; display: flex; flex-direction: column; gap: 28px; }
+  .project { display: flex; gap: 28px; }
+  .proj-card {
+    flex: 1; background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;
+    padding: 34px 38px; position: relative; overflow: hidden;
+  }
+  .proj-card::after {
+    content: ''; position: absolute; top: 0; right: 0; width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(244,114,182,0.08) 0%, transparent 70%);
+    border-radius: 50%; transform: translate(40px, -40px);
+  }
+  .proj-card h3 { font-size: 26px; font-weight: 700; margin-bottom: 6px; position: relative; z-index: 1; }
+  .proj-card .repo { font-size: 14px; color: #f472b6; font-family: system-ui, sans-serif; margin-bottom: 16px; position: relative; z-index: 1; }
+  .proj-card ul { list-style: none; position: relative; z-index: 1; }
+  .proj-card li { font-size: 16px; color: #94a3b8; line-height: 1.75; padding-left: 16px; position: relative; }
+  .proj-card li::before { content: '→'; position: absolute; left: 0; color: #f472b6; font-size: 13px; }
+  .stats-bar {
+    display: flex; gap: 36px; justify-content: center;
+    padding: 24px; background: rgba(244,114,182,0.04);
+    border-radius: 14px; border: 1px solid rgba(244,114,182,0.1);
+  }
+  .stat { text-align: center; }
+  .stat .num { font-size: 40px; font-weight: 900; color: #f9a8d4; font-family: system-ui, sans-serif; }
+  .stat .lbl { font-size: 14px; color: #64748b; margin-top: 4px; font-family: system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<div class="accent-line"></div>
+<div class="left">
+  <div class="month-tag">June · 2026</div>
+  <h2>课程成熟<br><span class="pink">CI 体系</span><br>分析接入</h2>
+  <div class="divider"></div>
+  <div class="sub">双仓库并进，课程大纲在线发布，CI 自动化闭环完成。</div>
+</div>
+<div class="right">
+  <div class="project">
+    <div class="proj-card">
+      <h3>嵌入式课程大纲</h3>
+      <div class="repo">riscv-embedded-course · 16 commits</div>
+      <ul>
+        <li>RuyiSDK 结构重组 + Advanced Track 附录</li>
+        <li>推荐教材体系 · 通俗化重写</li>
+        <li>关键词识别 + LED 控制项目</li>
+        <li>MNIST 10 章 HTML 大纲 + 本地预览</li>
+        <li>BOM 物料清单 · ch01–07 对齐</li>
+        <li>IoT 毕业项目 · GitHub Pages 发布</li>
+      </ul>
+    </div>
+    <div class="proj-card">
+      <h3>前端 CI + 文档体系</h3>
+      <div class="repo">board-docs-frontend · 10 commits</div>
+      <ul>
+        <li>每日 board-docs 子模块自动同步</li>
+        <li>pnpm 版本配置修复</li>
+        <li>Cloudflare Web Analytics Beacon 接入</li>
+        <li>部署/分析文档场景化拆分</li>
+        <li>docs/ 目录整理 · Mac 快捷键验证</li>
+      </ul>
+    </div>
+  </div>
+  <div class="stats-bar">
+    <div class="stat"><div class="num">26</div><div class="lbl">Total Commits</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">Repositories</div></div>
+    <div class="stat"><div class="num">GitHub Pages</div><div class="lbl">课程上线</div></div>
+    <div class="stat"><div class="num">CI 闭环</div><div class="lbl">自动化</div></div>
+  </div>
+</div>
+</body>
+</html>
