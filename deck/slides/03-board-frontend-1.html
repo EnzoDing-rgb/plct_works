@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>03 · Board Docs ① 站点搭建</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    background: #0a0e1a;
+    font-family: "Noto Serif SC", "PingFang SC", serif;
+    color: #f1f5f9;
+    padding: 90px 120px; position: relative;
+  }
+  .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #f0b429, #f59e0b, #d97706, #f0b429); }
+  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+  h2 { font-size: 52px; font-weight: 900; line-height: 1.2; margin-bottom: 12px; }
+  h2 .gold { color: #f0b429; }
+  .sub { font-size: 20px; color: #64748b; margin-bottom: 48px; font-family: system-ui, sans-serif; }
+  .content { display: flex; gap: 56px; }
+  .left { flex: 0 0 560px; }
+  .left .feature { margin-bottom: 28px; }
+  .left .feature h4 { font-size: 20px; color: #fcd34d; margin-bottom: 6px; }
+  .left .feature p { font-size: 17px; color: #94a3b8; line-height: 1.65; }
+  .right { flex: 1; }
+  .arch-box {
+    background: rgba(240,180,41,0.04); border: 1px solid rgba(240,180,41,0.12);
+    border-radius: 16px; padding: 32px 36px; margin-bottom: 24px;
+  }
+  .arch-box h4 { font-size: 18px; color: #f0b429; margin-bottom: 14px; font-family: system-ui, sans-serif; letter-spacing: 0.06em; }
+  .flow { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .flow-item {
+    background: rgba(255,255,255,0.04); border-radius: 10px;
+    padding: 12px 20px; font-size: 15px; color: #e2e8f0; font-family: system-ui, sans-serif;
+    text-align: center;
+  }
+  .flow-arrow { color: #f0b429; font-size: 18px; }
+  .stack-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .stack-tag {
+    font-size: 14px; padding: 8px 18px; border-radius: 8px;
+    background: rgba(255,255,255,0.04); color: #cbd5e1;
+    border: 1px solid rgba(255,255,255,0.08); font-family: system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="accent-line"></div>
+<div class="section-num">PROJECT 01 · 3 月</div>
+<h2>Board Docs Frontend <span class="gold">① 站点搭建</span></h2>
+<div class="sub">独立 Examples 教程站点，从零搭建，两轮迭代。</div>
+<div class="content">
+  <div class="left">
+    <div class="feature">
+      <h4>数据层</h4>
+      <p>从 test-doc 子模块扫描解析各开发板 README 与 Markdown 示例，frontmatter + 正文双通道提取。</p>
+    </div>
+    <div class="feature">
+      <h4>导航体系</h4>
+      <p>厂商 → SoC → 开发板 → 示例，四级层级导航；侧栏按芯片厂商 silicon_vendor 分组，可收起。</p>
+    </div>
+    <div class="feature">
+      <h4>页面矩阵</h4>
+      <p>首页板卡网格 + 筛选 · 详情页属性 + 示例列表（按 status 分类）· Markdown 排版 + 代码高亮。</p>
+    </div>
+    <div class="feature">
+      <h4>第二轮迭代</h4>
+      <p>示例标题去重 · README 标题重复处理 · 返回首页入口 · UI/UX 打磨。</p>
+    </div>
+  </div>
+  <div class="right">
+    <div class="arch-box">
+      <h4>技术架构</h4>
+      <div class="stack-row">
+        <span class="stack-tag">Astro</span><span class="stack-tag">React 18</span><span class="stack-tag">TypeScript</span><span class="stack-tag">Tailwind CSS</span>
+      </div>
+    </div>
+    <div class="arch-box">
+      <h4>数据流</h4>
+      <div class="flow">
+        <div class="flow-item">test-doc<br>子模块</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-item">Markdown<br>解析</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-item">frontmatter<br>提取</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-item">Astro<br>动态路由</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-item">多级页面<br>渲染</div>
+      </div>
+    </div>
+    <div class="arch-box">
+      <h4>交付</h4>
+      <p style="font-size:16px;color:#94a3b8;line-height:1.7;">仓库 github.com/DuoQilai/board-docs-frontend · 备份 PR 至 ruyisdk-dev-archive#6</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

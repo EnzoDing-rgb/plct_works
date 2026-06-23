@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>04 · Board Docs ② 插件集成</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    background: #0a0e1a;
+    font-family: "Noto Serif SC", "PingFang SC", serif;
+    color: #f1f5f9;
+    padding: 90px 120px; position: relative;
+  }
+  .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #2dd4bf, #14b8a6, #0d9488, #2dd4bf); }
+  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #2dd4bf; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+  h2 { font-size: 52px; font-weight: 900; line-height: 1.2; margin-bottom: 12px; }
+  h2 .teal { color: #2dd4bf; }
+  .sub { font-size: 20px; color: #64748b; margin-bottom: 48px; font-family: system-ui, sans-serif; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .card {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: 32px 36px; border-left: 4px solid #2dd4bf;
+  }
+  .card h4 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+  .card p { font-size: 16px; color: #94a3b8; line-height: 1.7; }
+  .card .tags { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .tag { font-size: 13px; padding: 5px 14px; border-radius: 999px; background: rgba(45,212,191,0.1); color: #5eead4; font-family: system-ui, sans-serif; }
+  .highlight {
+    grid-column: 1 / -1;
+    background: rgba(45,212,191,0.05); border: 1px solid rgba(45,212,191,0.15);
+    border-radius: 14px; padding: 28px 36px; text-align: center;
+    font-size: 19px; color: #5eead4; line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="accent-line"></div>
+<div class="section-num">PROJECT 01 · 4 月</div>
+<h2>Board Docs Frontend <span class="teal">② 插件集成与迭代</span></h2>
+<div class="sub">面向 VS Code / Eclipse 插件团队，完成消息通信与 UI 适配，子模块迁移，两轮迭代 20+ commits。</div>
+<div class="grid">
+  <div class="card">
+    <h4>VS Code / Eclipse 插件消息集成</h4>
+    <p>通过 userAgent 检测 VS Code（含 Code/）控制按钮显隐，浏览器/Eclipse/VS Code 外均不展示。右上角「在 VS Code 中使用」按钮，点击调用 vscode.postMessage 回传文档 URL + 开发板型号 + 示例名称。</p>
+    <div class="tags"><span class="tag">postMessage</span><span class="tag">userAgent 检测</span><span class="tag">条件渲染</span></div>
+  </div>
+  <div class="card">
+    <h4>UI 品牌化打磨</h4>
+    <p>标签图标替换为 RuyiSDK logo · 侧栏加宽 + 品牌首页链接 · favicon.ico 更新 · 侧栏缩进调整 · 返回首页面包屑导航。</p>
+    <div class="tags"><span class="tag">RuyiSDK 品牌</span><span class="tag">favicon</span><span class="tag">面包屑</span></div>
+  </div>
+  <div class="card">
+    <h4>子模块迁移</h4>
+    <p>网站文档仓库切换至 ruyisdk/board-docs，处理 /templates 目录排除（用于后续模板新增），phase 6 重命名 test-doc → board-docs。</p>
+    <div class="tags"><span class="tag">子模块管理</span><span class="tag">目录过滤</span></div>
+  </div>
+  <div class="card">
+    <h4>跨团队协作对齐</h4>
+    <p>学习 Electron 桌面开发与 VS Code 插件开发基本逻辑，理解对方团队需求，根据插件侧反馈做针对性 patch。按 silicon_vendor 命名规范对齐，SoC 路由重定向至 vendor。</p>
+    <div class="tags"><span class="tag">跨团队</span><span class="tag">Electron</span><span class="tag">VS Code API</span></div>
+  </div>
+  <div class="highlight">
+    30+ commits 跨越 3 个月 · 从零搭建 → 插件集成 → CI 自动化，完整的前端工程闭环
+  </div>
+</div>
+</body>
+</html>

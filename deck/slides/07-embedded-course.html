@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>07 · RISC-V 嵌入式课程</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    background: #0a0e1a;
+    font-family: "Noto Serif SC", "PingFang SC", serif;
+    color: #f1f5f9;
+    padding: 85px 120px; position: relative;
+  }
+  .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #2dd4bf, #14b8a6, #0d9488, #2dd4bf); }
+  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #2dd4bf; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+  h2 { font-size: 48px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+  h2 .teal { color: #2dd4bf; }
+  .repo-link { font-size: 18px; color: #2dd4bf; font-family: system-ui, sans-serif; margin-bottom: 36px; }
+  .content { display: flex; gap: 44px; }
+  .col { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+  .phase-box {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: 26px 30px; border-left: 4px solid #2dd4bf;
+  }
+  .phase-box.may { border-left-color: #f0b429; }
+  .phase-box h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .phase-box .date { font-size: 13px; color: #2dd4bf; font-family: system-ui, sans-serif; margin-bottom: 10px; }
+  .phase-box.may .date { color: #f0b429; }
+  .phase-box ul { list-style: none; }
+  .phase-box li { font-size: 15px; color: #94a3b8; line-height: 1.75; padding-left: 16px; position: relative; }
+  .phase-box li::before { content: '·'; position: absolute; left: 0; color: #2dd4bf; font-weight: bold; }
+  .phase-box.may li::before { color: #f0b429; }
+  .stat-strip {
+    margin-top: 8px; display: flex; gap: 28px; justify-content: center;
+    padding: 22px; background: rgba(45,212,191,0.04);
+    border-radius: 12px; border: 1px solid rgba(45,212,191,0.08);
+  }
+  .stat-item { text-align: center; }
+  .stat-item .num { font-size: 36px; font-weight: 900; color: #5eead4; font-family: system-ui, sans-serif; }
+  .stat-item .lbl { font-size: 14px; color: #64748b; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="accent-line"></div>
+<div class="section-num">PROJECT 03 · 5 月 – 6 月</div>
+<h2>RISC-V <span class="teal">嵌入式系统与边缘推理</span>课程大纲</h2>
+<div class="repo-link">github.com/EnzoDing-rgb/riscv-embedded-course · GitHub Pages 在线发布</div>
+<div class="content">
+  <div class="col">
+    <div class="phase-box may">
+      <h4>5 月 · 课程启动</h4>
+      <div class="date">5.29 · 仓库初始化</div>
+      <ul>
+        <li>双机分工架构设计</li>
+        <li>RuyiSDK 工具链在可用场景下的应用说明</li>
+        <li>ASCII 架构图 + 环境哨兵锁定</li>
+        <li>CourseOutline HTML 骨架</li>
+      </ul>
+    </div>
+    <div class="phase-box">
+      <h4>6 月 11–12 日 · 细化与物料</h4>
+      <div class="date">6.11–6.12 · 大纲迭代</div>
+      <ul>
+        <li>MNIST 10 章 CourseOutline HTML + 本地预览</li>
+        <li>简化 BOM 物料清单与 README</li>
+        <li>ch01–07 章节内容对齐</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col">
+    <div class="phase-box">
+      <h4>6 月 5 日 · 大纲重构</h4>
+      <div class="date">6.5 · 6 commits with Claude agent</div>
+      <ul>
+        <li>RuyiSDK 课程结构重组 + Advanced Track 附录</li>
+        <li>推荐教材列表（大纲顶部）</li>
+        <li>通俗化语言重写</li>
+        <li>移除 RevyOS 引用 → 通用 Linux 表述</li>
+        <li>单板流程精简 + 项目三切换为关键词识别 & LED 控制</li>
+      </ul>
+    </div>
+    <div class="phase-box">
+      <h4>6 月 21–22 日 · 发布上线</h4>
+      <div class="date">6.21–6.22 · GitHub Pages 部署</div>
+      <ul>
+        <li>IoT 毕业项目说明</li>
+        <li>README 通俗化 + 裸 HTML 链接</li>
+        <li>GitHub Pages 预览 URL · index 重定向修复</li>
+        <li>index.html 追踪修复 · 移除本地 start.sh</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="stat-strip">
+  <div class="stat-item"><div class="num">19</div><div class="lbl">Commits</div></div>
+  <div class="stat-item"><div class="num">10 章</div><div class="lbl">课程体系</div></div>
+  <div class="stat-item"><div class="num">3 项目</div><div class="lbl">练手+毕业</div></div>
+  <div class="stat-item"><div class="num">GitHub Pages</div><div class="lbl">在线发布</div></div>
+</div>
+</body>
+</html>

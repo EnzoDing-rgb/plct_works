@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>08 · 基础验证与 LLM 设施</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    background: #0a0e1a;
+    font-family: "Noto Serif SC", "PingFang SC", serif;
+    color: #f1f5f9;
+    padding: 85px 120px; position: relative;
+  }
+  .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #f0b429, #f59e0b, #d97706, #f0b429); }
+  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+  h2 { font-size: 48px; font-weight: 900; line-height: 1.2; margin-bottom: 36px; }
+  h2 .gold { color: #f0b429; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .card {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: 28px 32px;
+  }
+  .card h4 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .card .meta { font-size: 14px; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+  .card p, .card li { font-size: 16px; color: #94a3b8; line-height: 1.7; }
+  .card ul { list-style: none; }
+  .card li { padding-left: 16px; position: relative; }
+  .card li::before { content: '→'; position: absolute; left: 0; color: #f0b429; font-size: 13px; }
+  .highlight {
+    grid-column: 1 / -1;
+    background: rgba(240,180,41,0.05); border: 1px solid rgba(240,180,41,0.15);
+    border-radius: 14px; padding: 24px 36px; text-align: center;
+    font-size: 18px; color: #fcd34d; line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="accent-line"></div>
+<div class="section-num">基础工作 · 3 月 – 4 月</div>
+<h2>硬件测试 · Demo 设计 · <span class="gold">LLM 推理优化</span></h2>
+<div class="grid">
+  <div class="card">
+    <h4>LicheePi 4A 系统验证</h4>
+    <div class="meta">3 月 · PR: support-matrix#2</div>
+    <ul>
+      <li>荔枝派 4A 运行 RevyOS 并完成测试报告</li>
+      <li>tinn 示例运行及报告产出</li>
+      <li>报告: licheepi4a_tinn.md</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>中科院辩论 Demo 设计</h4>
+    <div class="meta">4 月 · 组会演示完毕</div>
+    <ul>
+      <li>RISC-V 开发板跑 openEuler 全栈应用</li>
+      <li>双 AI 学者 3 轮辩论（杰维斯 vs 米尔斯海默）</li>
+      <li>提出 5 个备选互动方案：画画 / 推理桌 / 文风万花筒 / 天价废话 / 真假鉴定</li>
+      <li>每位观众可参与的具体交互设计</li>
+    </ul>
+  </div>
+  <div class="card" style="grid-column: 1 / -1;">
+    <h4>A800 大模型推理服务优化</h4>
+    <div class="meta">4 月 · 自建推理环境</div>
+    <div style="display:flex;gap:24px;">
+      <ul style="flex:1;">
+        <li>硬件：A800-SXM4-80GB · 2×8358 (128 线程) · 1TB 内存 · 118TB NFS</li>
+        <li>Docker 容器直通物理 GPU · Qwen3.5-27B BF16 权重 ≈52GB</li>
+        <li>KV Cache FP8 量化 — 近似并发翻倍（ROI 最高）</li>
+      </ul>
+      <ul style="flex:1;">
+        <li>prefix-caching / chunked-prefill 场景性收益分析</li>
+        <li>生产默认方案：FP8 + MTP（多并发友好、工具调用更稳）</li>
+        <li>升级策略：65K → 131K → 262K 逐级验证，每次只动一个旋钮</li>
+        <li>自建回放集对比 tokens/s、TTFT、P95/P99</li>
+      </ul>
+    </div>
+  </div>
+  <div class="highlight">
+    购买了火山引擎和 Cursor 大模型服务 · 研究本地高性能服务器降低开发成本 · LLM 推理双保险
+  </div>
+</div>
+</body>
+</html>
