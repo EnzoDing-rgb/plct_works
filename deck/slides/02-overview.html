@@ -18,7 +18,7 @@
   .header { display: flex; align-items: baseline; gap: 28px; margin-bottom: 56px; }
   h2 { font-size: 56px; font-weight: 900; }
   h2 .gold { color: #f0b429; }
-  .header .sub { font-size: 20px; color: #64748b; font-family: system-ui, sans-serif; }
+  .header .sub { font-size: 20px; color: #94a3b8; font-family: system-ui, sans-serif; }
   .projects { display: flex; gap: 24px; }
   .card {
     flex: 1; background: rgba(255,255,255,0.02);
@@ -29,15 +29,15 @@
   .card .icon { font-size: 36px; margin-bottom: 18px; }
   .card h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
   .card .repo { font-size: 13px; color: #f0b429; font-family: system-ui, monospace; margin-bottom: 14px; word-break: break-all; }
-  .card .desc { font-size: 16px; color: #94a3b8; line-height: 1.65; margin-bottom: 16px; flex: 1; }
+  .card .desc { font-size: 16px; color: #cbd5e1; line-height: 1.65; margin-bottom: 16px; flex: 1; }
   .card .tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag { font-size: 12px; padding: 4px 12px; border-radius: 999px; background: rgba(240,180,41,0.1); color: #fcd34d; font-family: system-ui, sans-serif; }
-  .card:nth-child(2) .tag { background: rgba(45,212,191,0.1); color: #5eead4; }
-  .card:nth-child(2) .repo { color: #2dd4bf; }
-  .card:nth-child(3) .tag { background: rgba(167,139,250,0.1); color: #c4b5fd; }
-  .card:nth-child(3) .repo { color: #a78bfa; }
-  .card:nth-child(4) .tag { background: rgba(244,114,182,0.1); color: #f9a8d4; }
-  .card:nth-child(4) .repo { color: #f472b6; }
+  .card:nth-child(2) .tag { background: rgba(240,180,41,0.1); color: #fcd34d; }
+  .card:nth-child(2) .repo { color: #f0b429; }
+  .card:nth-child(3) .tag { background: rgba(240,180,41,0.1); color: #fcd34d; }
+  .card:nth-child(3) .repo { color: #f0b429; }
+  .card:nth-child(4) .tag { background: rgba(240,180,41,0.1); color: #fcd34d; }
+  .card:nth-child(4) .repo { color: #f0b429; }
   .bottom-note { margin-top: 48px; text-align: center; font-size: 18px; color: #475569; font-family: system-ui, sans-serif; }
   .bottom-note strong { color: #f0b429; }
 </style>
@@ -46,36 +46,36 @@
 <div class="accent-line"></div>
 <div class="header">
   <h2>项目<span class="gold">全景图</span></h2>
-  <span class="sub">4 个月 · 5 个仓库 · 横跨硬件测试 / 全栈应用 / LLM 推理 / 课程体系</span>
+  <span class="sub">4 个月 · 6 个仓库 · 硬件测试、前端站点、互动 Demo、课程大纲</span>
 </div>
 <div class="projects">
   <div class="card">
     <div class="icon">📋</div>
     <h3>Board Docs<br>Frontend</h3>
     <div class="repo">DuoQilai/board-docs-frontend</div>
-    <div class="desc">RISC-V 开发板文档展示站点。Astro + React + TS 全栈，多级导航与搜索，VS Code/Eclipse 插件集成，CI 自动化闭环。</div>
-    <div class="tags"><span class="tag">3月–6月</span><span class="tag">30+ commits</span><span class="tag">3轮迭代</span></div>
+    <div class="desc">RISC-V 开发板文档展示网站。从零搭建，多级导航和搜索，VS Code/Eclipse 插件集成，CI 自动同步。</div>
+    <div class="tags"><span class="tag">3月–6月</span><span class="tag">30+ commits</span><span class="tag">持续迭代</span></div>
   </div>
   <div class="card">
     <div class="icon">🎭</div>
     <h3>OpenSiliconBet</h3>
     <div class="repo">EnzoDing-rgb/OpenSiliconBet</div>
-    <div class="desc">RISC-V 三国杀 · AI/Agent 互动 Demo。FastAPI + React 全栈，语音交互闭环，中科院公众科学日现场演示。</div>
+    <div class="desc">中科院公众科学日现场互动 Demo。论坛辩论形式，AI 角色对话，观众语音提问，现场音箱回答。</div>
     <div class="tags"><span class="tag">5月</span><span class="tag">v0.1发布</span><span class="tag">6角色AI</span></div>
   </div>
   <div class="card">
     <div class="icon">📚</div>
     <h3>RISC-V 嵌入式<br>课程大纲</h3>
     <div class="repo">EnzoDing-rgb/riscv-embedded-course</div>
-    <div class="desc">RISC-V Linux 嵌入式实践课程。10 章体系 + Advanced Track，GitHub Pages 在线发布，IoT 毕业项目。</div>
+    <div class="desc">RISC-V Linux 嵌入式实践课程。10 章内容，带三个动手项目，已通过 GitHub Pages 网站在线发布。</div>
     <div class="tags"><span class="tag">5月–6月</span><span class="tag">19 commits</span><span class="tag">在线发布</span></div>
   </div>
   <div class="card">
     <div class="icon">🖥️</div>
-    <h3>基础验证<br>+ LLM 设施</h3>
+    <h3>LicheePi 4A<br>开发板测试</h3>
     <div class="repo">support-matrix + ruyisdk-dev-archive</div>
-    <div class="desc">LicheePi 4A · RevyOS 系统验证 · Tinn 神经网络 RuyiSDK 三阶段移植（x86→QEMU→实机）· 备份归档 PR#6。</div>
-    <div class="tags"><span class="tag">3月</span><span class="tag">2 PR</span><span class="tag">2 报告</span></div>
+    <div class="desc">在 RISC-V 开发板上跑通系统、跑神经网络程序。先用电脑模拟，再用真实板子验证，写了完整操作文档。</div>
+    <div class="tags"><span class="tag">3月</span><span class="tag">2 个 PR</span><span class="tag">2 份报告</span></div>
   </div>
 </div>
 <div class="bottom-note">以下按项目逐一展开，<strong>非按月</strong></div>

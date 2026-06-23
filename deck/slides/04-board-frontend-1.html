@@ -18,12 +18,12 @@
   .section-num { font-size: 14px; letter-spacing: 0.2em; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 12px; }
   h2 { font-size: 52px; font-weight: 900; line-height: 1.2; margin-bottom: 12px; }
   h2 .gold { color: #f0b429; }
-  .sub { font-size: 20px; color: #64748b; margin-bottom: 48px; font-family: system-ui, sans-serif; }
+  .sub { font-size: 20px; color: #94a3b8; margin-bottom: 48px; font-family: system-ui, sans-serif; }
   .content { display: flex; gap: 56px; }
   .left { flex: 0 0 560px; }
   .left .feature { margin-bottom: 28px; }
   .left .feature h4 { font-size: 20px; color: #fcd34d; margin-bottom: 6px; }
-  .left .feature p { font-size: 17px; color: #94a3b8; line-height: 1.65; }
+  .left .feature p { font-size: 17px; color: #cbd5e1; line-height: 1.65; }
   .right { flex: 1; }
   .arch-box {
     background: rgba(240,180,41,0.04); border: 1px solid rgba(240,180,41,0.12);
@@ -48,25 +48,25 @@
 <body>
 <div class="accent-line"></div>
 <div class="section-num">PROJECT 01 · 3 月</div>
-<h2>Board Docs Frontend <span class="gold">① 站点搭建</span></h2>
-<div class="sub">独立 Examples 教程站点，从零搭建，两轮迭代。</div>
+<h2>Board Docs Frontend <span class="gold">① 网站搭建</span></h2>
+<div class="sub">给 RISC-V 开发板做一个文档展示网站，从零开始，改了两轮。</div>
 <div class="content">
   <div class="left">
     <div class="feature">
-      <h4>数据层</h4>
-      <p>从 test-doc 子模块扫描解析各开发板 README 与 Markdown 示例，frontmatter + 正文双通道提取。</p>
+      <h4>内容来源</h4>
+      <p>自动读取文档仓库里的说明文件和示例代码，提取标题、描述、状态等信息，生成网页。</p>
     </div>
     <div class="feature">
-      <h4>导航体系</h4>
-      <p>厂商 → SoC → 开发板 → 示例，四级层级导航；侧栏按芯片厂商 silicon_vendor 分组，可收起。</p>
+      <h4>浏览方式</h4>
+      <p>按芯片厂商分组浏览，点进去看具体开发板，再点进去看示例代码。左边有目录，右边看内容。</p>
     </div>
     <div class="feature">
-      <h4>页面矩阵</h4>
-      <p>首页板卡网格 + 筛选 · 详情页属性 + 示例列表（按 status 分类）· Markdown 排版 + 代码高亮。</p>
+      <h4>主要页面</h4>
+      <p>首页：所有开发板卡片 + 搜索筛选。详情页：开发板属性 + 代码示例列表。示例页：说明文档 + 代码高亮。</p>
     </div>
     <div class="feature">
-      <h4>第二轮迭代</h4>
-      <p>示例标题去重 · README 标题重复处理 · 返回首页入口 · UI/UX 打磨。</p>
+      <h4>第二轮改进</h4>
+      <p>去掉重复标题 · 修复 README 显示问题 · 加了返回首页的入口 · 界面细节打磨。</p>
     </div>
   </div>
   <div class="right">
@@ -92,7 +92,7 @@
     </div>
     <div class="arch-box">
       <h4>交付</h4>
-      <p style="font-size:16px;color:#94a3b8;line-height:1.7;">仓库 github.com/DuoQilai/board-docs-frontend · 备份 PR 至 ruyisdk-dev-archive#6</p>
+      <p style="font-size:16px;color:#cbd5e1;line-height:1.7;">仓库 github.com/DuoQilai/board-docs-frontend · 备份 PR 至 ruyisdk-dev-archive#6</p>
     </div>
   </div>
 </div>

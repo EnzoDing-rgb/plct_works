@@ -14,54 +14,54 @@
     padding: 90px 120px; position: relative;
   }
   .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, #a78bfa, #8b5cf6, #7c3aed, #a78bfa); }
-  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #a78bfa; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+    background: linear-gradient(90deg, #f0b429, #f59e0b, #d97706, #f0b429); }
+  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 12px; }
   h2 { font-size: 52px; font-weight: 900; line-height: 1.2; margin-bottom: 12px; }
-  h2 .purple { color: #a78bfa; }
-  .sub { font-size: 20px; color: #64748b; margin-bottom: 40px; font-family: system-ui, sans-serif; }
+  h2 .gold { color: #f0b429; }
+  .sub { font-size: 20px; color: #94a3b8; margin-bottom: 40px; font-family: system-ui, sans-serif; }
   .content { display: flex; gap: 50px; }
   .left { flex: 0 0 600px; display: flex; flex-direction: column; gap: 24px; }
   .item {
-    background: rgba(167,139,250,0.04); border: 1px solid rgba(167,139,250,0.1);
+    background: rgba(240,180,41,0.04); border: 1px solid rgba(240,180,41,0.1);
     border-radius: 12px; padding: 26px 32px;
   }
-  .item h4 { font-size: 20px; font-weight: 700; color: #c4b5fd; margin-bottom: 6px; }
-  .item p { font-size: 16px; color: #94a3b8; line-height: 1.65; }
+  .item h4 { font-size: 20px; font-weight: 700; color: #fcd34d; margin-bottom: 6px; }
+  .item p { font-size: 16px; color: #cbd5e1; line-height: 1.65; }
   .right { flex: 1; display: flex; flex-direction: column; gap: 24px; }
   .stat-card {
     background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
     border-radius: 14px; padding: 28px 32px; text-align: center;
   }
-  .stat-card .num { font-size: 48px; font-weight: 900; color: #c4b5fd; font-family: system-ui, sans-serif; }
-  .stat-card .lbl { font-size: 16px; color: #64748b; margin-top: 6px; }
+  .stat-card .num { font-size: 48px; font-weight: 900; color: #fcd34d; font-family: system-ui, sans-serif; }
+  .stat-card .lbl { font-size: 16px; color: #94a3b8; margin-top: 6px; }
   .stat-row { display: flex; gap: 20px; }
   .stat-row .stat-card { flex: 1; }
   .flow-box {
-    background: rgba(167,139,250,0.04); border: 1px solid rgba(167,139,250,0.1);
+    background: rgba(240,180,41,0.04); border: 1px solid rgba(240,180,41,0.1);
     border-radius: 14px; padding: 28px 32px; text-align: center;
-    font-size: 18px; color: #ddd6fe; line-height: 1.7;
+    font-size: 18px; color: #fef3c7; line-height: 1.7;
   }
-  .flow-box strong { color: #a78bfa; }
+  .flow-box strong { color: #f0b429; }
 </style>
 </head>
 <body>
 <div class="accent-line"></div>
 <div class="section-num">PROJECT 01 · 6 月</div>
-<h2>Board Docs Frontend <span class="purple">③ CI 与运维体系</span></h2>
-<div class="sub">GitHub Actions 自动化闭环 + Cloudflare Web Analytics + 文档站点运维。</div>
+<h2>Board Docs Frontend <span class="gold">③ 自动化与运维</span></h2>
+<div class="sub">让网站自动更新内容、自动检查访问情况，减少人工维护。</div>
 <div class="content">
   <div class="left">
     <div class="item">
-      <h4>每日子模块自动同步</h4>
-      <p>GitHub Actions 工作流：每日定时触发 → 拉取 board-docs 子模块最新 → 自动提交 PR。扩展示例分类维度，确保站点内容与文档仓库实时同步。</p>
+      <h4>每天自动更新内容</h4>
+      <p>设了一个定时任务，每天自动拉取最新文档，如果有更新就自动提交改动。不需要人手动去刷新。</p>
     </div>
     <div class="item">
-      <h4>pnpm 版本修复</h4>
-      <p>CI 中 pnpm 版本配置问题排查与修复：改用 packageManager 字段指定版本 → 修复子模块同步流程中的 reset 逻辑问题 → 保障 CI 稳定运行。</p>
+      <h4>修构建工具的问题</h4>
+      <p>自动构建流程里包管理器版本不对，修了配置方式。同步文档的时候有个重置逻辑也有问题，一并修了。</p>
     </div>
     <div class="item">
-      <h4>Cloudflare Web Analytics 接入</h4>
-      <p>站点 layout 层接入 Cloudflare Web Analytics Beacon → 部署/分析文档按场景拆分（Cloudflare / 通用）→ 精简为 Cloudflare 专用版 → 分析验证步骤添加 Mac 键盘快捷键说明。</p>
+      <h4>加了访问统计</h4>
+      <p>给网站接入了访问量统计工具，能看谁来看过。整理了部署和分析的文档，按使用场景分开写清楚。</p>
     </div>
   </div>
   <div class="right">
@@ -74,7 +74,7 @@
       <div class="stat-card"><div class="num">docs/</div><div class="lbl">文档目录整理</div></div>
     </div>
     <div class="stat-card">
-      <div style="font-size:18px;color:#ddd6fe;line-height:1.7;">
+      <div style="font-size:18px;color:#fef3c7;line-height:1.7;">
         站点线上 URL 与部署信息<br>已记录于 README
       </div>
     </div>

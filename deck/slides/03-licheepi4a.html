@@ -14,83 +14,83 @@
     padding: 85px 120px; position: relative;
   }
   .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, #2dd4bf, #14b8a6, #0d9488, #2dd4bf); }
-  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #2dd4bf; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+    background: linear-gradient(90deg, #f0b429, #f59e0b, #d97706, #f0b429); }
+  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 12px; }
   h2 { font-size: 46px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
-  h2 .teal { color: #2dd4bf; }
-  .sub { font-size: 19px; color: #64748b; margin-bottom: 36px; font-family: system-ui, sans-serif; }
+  h2 .gold { color: #f0b429; }
+  .sub { font-size: 19px; color: #94a3b8; margin-bottom: 36px; font-family: system-ui, sans-serif; }
   .content { display: flex; gap: 44px; }
   .left { flex: 0 0 540px; display: flex; flex-direction: column; gap: 20px; }
   .info-card {
-    background: rgba(45,212,191,0.04); border: 1px solid rgba(45,212,191,0.1);
+    background: rgba(240,180,41,0.04); border: 1px solid rgba(240,180,41,0.1);
     border-radius: 14px; padding: 24px 30px;
   }
-  .info-card h4 { font-size: 20px; font-weight: 700; color: #5eead4; margin-bottom: 6px; }
-  .info-card p { font-size: 16px; color: #94a3b8; line-height: 1.65; }
+  .info-card h4 { font-size: 20px; font-weight: 700; color: #fcd34d; margin-bottom: 6px; }
+  .info-card p { font-size: 16px; color: #cbd5e1; line-height: 1.65; }
   .right { flex: 1; }
   .flow-box {
     background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
     border-radius: 16px; padding: 28px 32px; margin-bottom: 20px;
   }
-  .flow-box h4 { font-size: 18px; color: #2dd4bf; margin-bottom: 16px; font-family: system-ui, sans-serif; letter-spacing: 0.06em; }
+  .flow-box h4 { font-size: 18px; color: #f0b429; margin-bottom: 16px; font-family: system-ui, sans-serif; letter-spacing: 0.06em; }
   .stages { display: flex; gap: 14px; }
   .stage {
-    flex: 1; background: rgba(45,212,191,0.05); border: 1px solid rgba(45,212,191,0.12);
+    flex: 1; background: rgba(240,180,41,0.05); border: 1px solid rgba(240,180,41,0.12);
     border-radius: 12px; padding: 20px 22px; text-align: center;
   }
-  .stage .num { font-size: 28px; font-weight: 900; color: #2dd4bf; font-family: system-ui, sans-serif; }
+  .stage .num { font-size: 28px; font-weight: 900; color: #f0b429; font-family: system-ui, sans-serif; }
   .stage .env { font-size: 15px; font-weight: 700; margin: 6px 0; }
-  .stage .detail { font-size: 14px; color: #94a3b8; line-height: 1.5; }
-  .stage .arrow { color: #2dd4bf; font-size: 18px; margin-top: 6px; }
+  .stage .detail { font-size: 14px; color: #cbd5e1; line-height: 1.5; }
+  .stage .arrow { color: #f0b429; font-size: 18px; margin-top: 6px; }
   .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-  .tag { font-size: 13px; padding: 6px 14px; border-radius: 999px; background: rgba(45,212,191,0.1); color: #5eead4; font-family: system-ui, sans-serif; }
+  .tag { font-size: 13px; padding: 6px 14px; border-radius: 999px; background: rgba(240,180,41,0.1); color: #fcd34d; font-family: system-ui, sans-serif; }
   .pr-box {
-    background: rgba(45,212,191,0.04); border: 1px solid rgba(45,212,191,0.1);
+    background: rgba(240,180,41,0.04); border: 1px solid rgba(240,180,41,0.1);
     border-radius: 12px; padding: 20px 28px; text-align: center;
-    font-size: 17px; color: #5eead4; line-height: 1.6;
+    font-size: 17px; color: #fcd34d; line-height: 1.6;
   }
 </style>
 </head>
 <body>
 <div class="accent-line"></div>
 <div class="section-num">基础验证 · 3 月</div>
-<h2>LicheePi 4A · <span class="teal">RuyiSDK 示例移植与验证</span></h2>
-<div class="sub">三阶段验证：x86 原生 → QEMU RISC-V 仿真 → RevyOS 实机。RuyiSDK 工具链实战闭环。</div>
+<h2>LicheePi 4A · <span class="gold">开发板测试与程序移植</span></h2>
+<div class="sub">分三步验证程序能跑：普通电脑 → RISC-V 模拟器 → 真实开发板。每一步都写了操作文档。</div>
 <div class="content">
   <div class="left">
     <div class="info-card">
-      <h4>Tinn · 200 行 C99 神经网络库</h4>
-      <p>无依赖神经网络库，使用 semeion 手写数字数据集（16×16 像素）进行训练与推理，终端输出误差下降与预测结果。为 RISC-V 嵌入式 AI 推理提供可复现验证用例。</p>
+      <h4>Tinn：一个 200 行的神经网络程序</h4>
+      <p>用 C 语言写的迷你神经网络，不依赖任何第三方库。用 16×16 像素手写数字图片来训练和识别，能输出训练进度和识别结果。适合拿来验证开发板的计算能力。</p>
     </div>
     <div class="info-card">
-      <h4>RuyiSDK 工具链实战</h4>
-      <p>Ruyi 0.46.0 包管理安装 gnu-plct 工具链 + QEMU riscv64 8.2+，交叉编译 Tinn（-O2 -static），验证 RuyiSDK 统一包管理/版本/路径的标准化流程。</p>
+      <h4>用 RuyiSDK 工具链来编译程序</h4>
+      <p>用 Ruyi 包管理器装编译工具和模拟器，一行命令就能把同一个 C 程序编译成 RISC-V 开发板能跑的版本，不用手动配环境。</p>
     </div>
     <div class="info-card">
-      <h4>交付物</h4>
-      <p>support-matrix PR#2（RevyOS 测试报告）· 完整移植报告 licheepi4a_tinn.md（三阶段命令、输出、验证结果）· ruyisdk-dev-archive PR#6（备份归档）</p>
+      <h4>提交的成果</h4>
+      <p>给 support-matrix 仓库提了测试报告 PR · 写了完整的移植操作文档（每一步的命令和运行结果都有）· 给归档仓库提了备份 PR</p>
     </div>
   </div>
   <div class="right">
     <div class="flow-box">
-      <h4>三阶段验证流水线</h4>
+      <h4>三步验证</h4>
       <div class="stages">
         <div class="stage">
           <div class="num">①</div>
           <div class="env">x86_64 Linux</div>
-          <div class="detail">gcc + make<br>原生编译运行<br>error 明显下降<br>预测向量正常</div>
+          <div class="detail">普通电脑编译运行<br>确认程序本身没问题<br>训练误差持续下降<br>识别结果正确</div>
           <div class="arrow">↓ 通过</div>
         </div>
         <div class="stage">
           <div class="num">②</div>
           <div class="env">QEMU RISC-V</div>
-          <div class="detail">Ruyi gnu-plct 交叉编译<br>qemu-riscv64 仿真<br>训练过程正常<br>无硬件即可验证</div>
+          <div class="detail">用 Ruyi 工具链编译<br>QEMU 模拟 RISC-V 环境<br>程序正常运行<br>不需真实板子就能测</div>
           <div class="arrow">↓ 通过</div>
         </div>
         <div class="stage">
           <div class="num">③</div>
           <div class="env">LicheePi 4A</div>
-          <div class="detail">TH1520 · RevyOS<br>Debian 13 riscv64<br>kernel 6.6.119<br>scp 部署运行</div>
+          <div class="detail">荔枝派 4A 真实板子<br>RevyOS 操作系统<br>把程序传上去直接跑<br>运行结果正确</div>
         </div>
       </div>
     </div>

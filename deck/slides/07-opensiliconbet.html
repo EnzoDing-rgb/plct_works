@@ -14,55 +14,55 @@
     padding: 85px 120px; position: relative;
   }
   .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, #f472b6, #ec4899, #db2777, #f472b6); }
-  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #f472b6; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+    background: linear-gradient(90deg, #f0b429, #f59e0b, #d97706, #f0b429); }
+  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 12px; }
   h2 { font-size: 52px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
-  h2 .pink { color: #f472b6; }
-  .repo-link { font-size: 18px; color: #f472b6; font-family: system-ui, sans-serif; margin-bottom: 36px; }
+  h2 .gold { color: #f0b429; }
+  .repo-link { font-size: 18px; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 36px; }
   .content { display: flex; gap: 48px; }
   .left { flex: 0 0 580px; display: flex; flex-direction: column; gap: 20px; }
   .desc-card {
-    background: rgba(244,114,182,0.04); border: 1px solid rgba(244,114,182,0.1);
+    background: rgba(240,180,41,0.04); border: 1px solid rgba(240,180,41,0.1);
     border-radius: 14px; padding: 26px 32px;
   }
-  .desc-card h4 { font-size: 20px; font-weight: 700; color: #f9a8d4; margin-bottom: 8px; }
-  .desc-card p { font-size: 16px; color: #94a3b8; line-height: 1.7; }
+  .desc-card h4 { font-size: 20px; font-weight: 700; color: #fcd34d; margin-bottom: 8px; }
+  .desc-card p { font-size: 16px; color: #cbd5e1; line-height: 1.7; }
   .right { flex: 1; }
   .arch-box {
     background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
     border-radius: 14px; padding: 28px 32px; margin-bottom: 20px;
   }
-  .arch-box h4 { font-size: 18px; color: #f472b6; margin-bottom: 12px; font-family: system-ui, sans-serif; letter-spacing: 0.06em; }
+  .arch-box h4 { font-size: 18px; color: #f0b429; margin-bottom: 12px; font-family: system-ui, sans-serif; letter-spacing: 0.06em; }
   .tag-row { display: flex; flex-wrap: wrap; gap: 10px; }
-  .tag { font-size: 14px; padding: 7px 16px; border-radius: 8px; background: rgba(244,114,182,0.08); color: #f9a8d4; border: 1px solid rgba(244,114,182,0.12); font-family: system-ui, sans-serif; }
+  .tag { font-size: 14px; padding: 7px 16px; border-radius: 8px; background: rgba(240,180,41,0.08); color: #fcd34d; border: 1px solid rgba(240,180,41,0.12); font-family: system-ui, sans-serif; }
   .timeline { display: flex; gap: 14px; }
   .phase {
     flex: 1; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
     border-radius: 10px; padding: 18px 20px; text-align: center;
   }
-  .phase .date { font-size: 13px; color: #f472b6; font-family: system-ui, sans-serif; }
+  .phase .date { font-size: 13px; color: #f0b429; font-family: system-ui, sans-serif; }
   .phase .title { font-size: 16px; font-weight: 700; margin: 6px 0; }
-  .phase .detail { font-size: 14px; color: #94a3b8; line-height: 1.5; }
+  .phase .detail { font-size: 14px; color: #cbd5e1; line-height: 1.5; }
 </style>
 </head>
 <body>
 <div class="accent-line"></div>
 <div class="section-num">PROJECT 02 · 5 月 · 中科院公众科学日</div>
-<h2>OpenSiliconBet · <span class="pink">RISC-V 三国杀</span></h2>
+<h2>OpenSiliconBet · <span class="gold">RISC-V 三国杀</span></h2>
 <div class="repo-link">github.com/EnzoDing-rgb/OpenSiliconBet · 中科院公众科学日现场互动演示</div>
 <div class="content">
   <div class="left">
     <div class="desc-card">
-      <h4>产品形态</h4>
-      <p>全栈互动小应用：论坛交锋形式。RISC-V / x86 / ARM 三阵营 + Lex 主持 + 黄仁勋环节 + 观众问答。面向科普分会场，不做胜负式辩论，强调互动体验。</p>
+      <h4>这是个什么</h4>
+      <p>一个现场互动程序：模拟论坛辩论。观众能看到 RISC-V、x86、ARM 三个阵营的 AI 角色轮流发言，有主持人控场，还有嘉宾环节和观众提问。面向普通观众，强调好玩、能互动。</p>
     </div>
     <div class="desc-card">
-      <h4>语音交互闭环</h4>
-      <p>外接麦克风采集观众提问 → 浏览器/后端 STT 转写 → LLM 生成回答 → DashScope TTS 语音合成（qwen3-tts-vc-realtime）→ 音箱播报，形成现场可听可说闭环。</p>
+      <h4>观众怎么玩</h4>
+      <p>观众对着麦克风问问题 → 电脑识别语音转成文字 → AI 当场生成回答 → 音箱把回答念出来。整个过程观众只动嘴，不用碰键盘鼠标。</p>
     </div>
     <div class="desc-card">
-      <h4>现场硬件联调</h4>
-      <p>笔记本经 USB 扩展坞连接外接显示屏（主屏演示 + 副屏控台）+ 麦克风 + 音箱。活动前逐项验证权限、默认输入输出设备、音量与延迟。</p>
+      <h4>现场布置</h4>
+      <p>笔记本接扩展坞，连了外接显示屏、麦克风、音箱。活动前一个个确认设备都能正常工作，音量合适，没有延迟。</p>
     </div>
   </div>
   <div class="right">
@@ -83,12 +83,12 @@
       </div>
     </div>
     <div class="arch-box">
-      <h4>7 天密集迭代 · 5.11–5.17</h4>
+      <h4>开发过程 · 5.11–5.17</h4>
       <div class="timeline">
-        <div class="phase"><div class="date">5.11–13</div><div class="title">基建搭建</div><div class="detail">FastAPI+React骨架<br>LLM编排<br>五嘉宾SKILL设计<br>deep-research调研</div></div>
-        <div class="phase"><div class="date">5.14</div><div class="title">核心成型</div><div class="detail">黄仁勋接入<br>TTS合成<br>环境变量体系<br>.env.example</div></div>
-        <div class="phase"><div class="date">5.15–16</div><div class="title">v0.1 发布</div><div class="detail">粒子动画结尾<br>语音交互闭环<br>音量优化<br>Q&A状态机</div></div>
-        <div class="phase"><div class="date">5.17</div><div class="title">现场联调</div><div class="detail">远程merge<br>扩展坞/显示屏<br>麦克风/音箱<br>逐项验证</div></div>
+        <div class="phase"><div class="date">5.11–13</div><div class="title">搭建框架</div><div class="detail">前后端骨架<br>AI 对话逻辑<br>五个角色设定<br>背景资料调研</div></div>
+        <div class="phase"><div class="date">5.14</div><div class="title">核心功能</div><div class="detail">嘉宾角色接入<br>语音合成<br>配置文件整理</div></div>
+        <div class="phase"><div class="date">5.15–16</div><div class="title">打磨发布</div><div class="detail">动画结尾页<br>语音交互打通<br>音量调整</div></div>
+        <div class="phase"><div class="date">5.17</div><div class="title">现场调试</div><div class="detail">远程合并代码<br>设备连接测试<br>逐项确认</div></div>
       </div>
     </div>
   </div>
