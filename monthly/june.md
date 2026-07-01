@@ -37,6 +37,7 @@
 - 改为 Linux 嵌入式方向大纲并加入 IoT capstone；README 白话重写。
 - 上线 GitHub Pages：单入口 + `index.html` 跳转至 `CourseOutline.html`，浏览器直接可看完整大纲。
 - 填写并整理课程进度表，移除本地 Excel 脚手架。
+- 早期独立设计 8 周 TinyML KWS 课程蓝图（对标 MIT 6.5940），覆盖预训练（数据采集 + MFCC + DS-CNN）→ 后训练（PTQ/量化/剪枝）→ 推理部署（int8 C + LED 控灯）全流程。虽未被最终大纲采纳，[`tinyml-kws-course-blueprint.md`](https://github.com/EnzoDing-rgb/riscv-embedded-course/blob/master/docs/archive/tinyml-kws-course-blueprint.md) 已归档留存。
 
 **关键 commit**：
 - [`cf6dd44`](https://github.com/EnzoDing-rgb/riscv-embedded-course/commit/cf6dd44) — docs: MNIST 10-ch CourseOutline + local preview（HTML 大纲主体交付）
