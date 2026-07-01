@@ -15,6 +15,10 @@
 - **访问统计**：接入 Cloudflare Web Analytics beacon，并简化为 Cloudflare-only 部署的统计文档。
 - **文档整理**：文档统一收进 `docs/` 目录；README 补充线上地址与部署事实；部署 / 统计文档按场景拆分；补充验证步骤的 Mac 快捷键说明。
 
+**关键 commit**：
+- [`a9d052f`](https://github.com/DuoQilai/board-docs-frontend/commit/a9d052f) — Add daily board-docs sync and expand example categories（CI 子模块自动同步工作流）
+- [`f905521`](https://github.com/DuoQilai/board-docs-frontend/commit/f905521) — Add Cloudflare Web Analytics beacon to site layout（访问统计分析接入）
+
 ---
 
 ## 2. riscv-embedded-course · 自研课程大纲（课程研发）
@@ -23,6 +27,7 @@
 
 - 项目仓库：[riscv-embedded-course](https://github.com/EnzoDing-rgb/riscv-embedded-course)
 - 在线大纲：https://enzoding-rgb.github.io/riscv-embedded-course/
+- 大纲源文件：[`docs/CourseOutline.html`](https://github.com/EnzoDing-rgb/riscv-embedded-course/blob/main/docs/CourseOutline.html)
 - 定位：本人作为课程研发，独立产出的一版《RISC-V Linux 嵌入式实践》课程草稿——在 RISC-V Linux 开发板上用 RuyiSDK + C 做嵌入式应用，含术语表、章节表、物料 BOM 与递进式项目。
 
 ### 6 月主要工作
@@ -32,6 +37,10 @@
 - 改为 Linux 嵌入式方向大纲并加入 IoT capstone；README 白话重写。
 - 上线 GitHub Pages：单入口 + `index.html` 跳转至 `CourseOutline.html`，浏览器直接可看完整大纲。
 - 填写并整理课程进度表，移除本地 Excel 脚手架。
+
+**关键 commit**：
+- [`cf6dd44`](https://github.com/EnzoDing-rgb/riscv-embedded-course/commit/cf6dd44) — docs: MNIST 10-ch CourseOutline + local preview（HTML 大纲主体交付）
+- [`0ee0a89`](https://github.com/EnzoDing-rgb/riscv-embedded-course/commit/0ee0a89) — docs: single GitHub Pages entry, remove local start.sh（GitHub Pages 部署收尾）
 
 ---
 
@@ -46,6 +55,10 @@
 
 - **仓库重构**：将仓库重整为按章、按节的标准布局——`chapters/ch01|ch02/` 下每节拆为 `lecture.md`（讲义）+ `lab.md`（实验），整章 `slides.html`，新增 `boards/` 板卡参考与 `docs/archive/` 历史归档。
 - **教案撰写**：完成 Chapter 1（开发环境篇，1.1–1.5）与 Chapter 2（工具链与工程，2.1–2.6）的讲义与实验，前后写了两版，统一格式；ch02 含 hello、project-template 示例代码。
+
+**关键 commit**：
+- [`f3ec124`](https://github.com/DuoQilai/ruyi-riscv-linux-book/commit/f3ec124) — Restructure repo: chapters per-section layout and docs archive（仓库整体重构）
+- [`aa57dc6`](https://github.com/DuoQilai/ruyi-riscv-linux-book/commit/aa57dc6) — Write full ch02 lecture and lab content matching ch01 format（ch02 完整教案交付）
 
 ### 仓库结构
 
