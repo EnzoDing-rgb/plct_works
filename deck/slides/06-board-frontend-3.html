@@ -60,14 +60,18 @@
       <p>自动构建流程里包管理器版本不对，修了配置方式。同步文档的时候有个重置逻辑也有问题，一并修了。</p>
     </div>
     <div class="item">
+      <h4>示例分类更清楚</h4>
+      <p>给开发板示例加了类型标签，比如基础、外设、网络、AI、图形界面等，网站上按类型筛选更方便。</p>
+    </div>
+    <div class="item">
       <h4>加了访问统计</h4>
-      <p>给网站接入了访问量统计工具，能看谁来看过。整理了部署和分析的文档，按使用场景分开写清楚。</p>
+      <p>网站接入了访问量统计，能看大概有多少人来过。相关说明文档也整理进 docs 文件夹。</p>
     </div>
   </div>
   <div class="right">
     <div class="flow-box">
-      <strong>自动化闭环</strong><br>
-      每日 Cron → 子模块同步 → Auto PR<br>→ CI 验证 → 合并 → 站点更新
+      <strong>自动更新流程</strong><br>
+      每天检查文档有没有更新 → 有就自动提交 → 跑一遍构建确认没问题 → 网站自动刷新
     </div>
     <div class="stat-row">
       <div class="stat-card"><div class="num">10</div><div class="lbl">6月 Commits</div></div>

@@ -19,17 +19,16 @@
   h2 { font-size: 56px; font-weight: 900; }
   h2 .gold { color: #f0b429; }
   .header .sub { font-size: 20px; color: #94a3b8; font-family: system-ui, sans-serif; }
-  .projects { display: flex; gap: 24px; }
+  .projects { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
   .card {
-    flex: 1; background: rgba(255,255,255,0.02);
+    background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;
-    padding: 36px 34px; display: flex; flex-direction: column;
-    transition: transform .2s;
+    padding: 28px 22px; display: flex; flex-direction: column;
   }
-  .card .icon { font-size: 36px; margin-bottom: 18px; }
-  .card h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
-  .card .repo { font-size: 13px; color: #f0b429; font-family: system-ui, monospace; margin-bottom: 14px; word-break: break-all; }
-  .card .desc { font-size: 16px; color: #cbd5e1; line-height: 1.65; margin-bottom: 16px; flex: 1; }
+  .card .icon { font-size: 32px; margin-bottom: 14px; }
+  .card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .card .repo { font-size: 11px; color: #f0b429; font-family: system-ui, monospace; margin-bottom: 12px; word-break: break-all; }
+  .card .desc { font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-bottom: 14px; flex: 1; }
   .card .tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag { font-size: 12px; padding: 4px 12px; border-radius: 999px; background: rgba(240,180,41,0.1); color: #fcd34d; font-family: system-ui, sans-serif; }
   .card:nth-child(2) .tag { background: rgba(240,180,41,0.1); color: #fcd34d; }
@@ -38,6 +37,8 @@
   .card:nth-child(3) .repo { color: #f0b429; }
   .card:nth-child(4) .tag { background: rgba(240,180,41,0.1); color: #fcd34d; }
   .card:nth-child(4) .repo { color: #f0b429; }
+  .card:nth-child(5) .tag { background: rgba(240,180,41,0.1); color: #fcd34d; }
+  .card:nth-child(5) .repo { color: #f0b429; }
   .bottom-note { margin-top: 48px; text-align: center; font-size: 18px; color: #475569; font-family: system-ui, sans-serif; }
   .bottom-note strong { color: #f0b429; }
 </style>
@@ -46,14 +47,21 @@
 <div class="accent-line"></div>
 <div class="header">
   <h2>项目<span class="gold">全景图</span></h2>
-  <span class="sub">4 个月 · 6 个仓库 · 硬件测试、前端站点、互动 Demo、课程大纲</span>
+  <span class="sub">4 个月 · 7 个仓库 · 板子验证、文档网站、互动 Demo、课程研发与教材协作</span>
 </div>
 <div class="projects">
+  <div class="card">
+    <div class="icon">🖥️</div>
+    <h3>LicheePi 4A<br>开发板测试</h3>
+    <div class="repo">support-matrix + ruyisdk-dev-archive</div>
+    <div class="desc">在 RISC-V 开发板上跑通系统、跑神经网络程序。先用电脑模拟，再用真实板子验证，写了完整操作文档。</div>
+    <div class="tags"><span class="tag">3月</span><span class="tag">2 个 PR</span><span class="tag">2 份报告</span></div>
+  </div>
   <div class="card">
     <div class="icon">📋</div>
     <h3>Board Docs<br>Frontend</h3>
     <div class="repo">DuoQilai/board-docs-frontend</div>
-    <div class="desc">RISC-V 开发板文档展示网站。从零搭建，多级导航和搜索，VS Code/Eclipse 插件集成，CI 自动同步。</div>
+    <div class="desc">RISC-V 开发板文档网站。从零搭站，加了搜索和编辑器插件；6 月又做了每天自动更新内容和访问统计。</div>
     <div class="tags"><span class="tag">3月–6月</span><span class="tag">30+ commits</span><span class="tag">持续迭代</span></div>
   </div>
   <div class="card">
@@ -64,18 +72,18 @@
     <div class="tags"><span class="tag">4月–5月</span><span class="tag">v0.1发布</span><span class="tag">6角色AI</span></div>
   </div>
   <div class="card">
-    <div class="icon">📚</div>
-    <h3>RISC-V 嵌入式<br>课程大纲</h3>
+    <div class="icon">📝</div>
+    <h3>自研课程<br>草稿</h3>
     <div class="repo">EnzoDing-rgb/riscv-embedded-course</div>
-    <div class="desc">RISC-V Linux 嵌入式实践课程。10 章内容，带三个动手项目，已通过 GitHub Pages 网站在线发布。</div>
-    <div class="tags"><span class="tag">5月–6月</span><span class="tag">19 commits</span><span class="tag">在线发布</span></div>
+    <div class="desc">我自己先写的一版 Linux 嵌入式课。大纲、物料、三个动手项目，挂网页在线发布，用来试水定方向。</div>
+    <div class="tags"><span class="tag">5月–6月</span><span class="tag">自研</span><span class="tag">网页发布</span></div>
   </div>
   <div class="card">
-    <div class="icon">🖥️</div>
-    <h3>LicheePi 4A<br>开发板测试</h3>
-    <div class="repo">support-matrix + ruyisdk-dev-archive</div>
-    <div class="desc">在 RISC-V 开发板上跑通系统、跑神经网络程序。先用电脑模拟，再用真实板子验证，写了完整操作文档。</div>
-    <div class="tags"><span class="tag">3月</span><span class="tag">2 个 PR</span><span class="tag">2 份报告</span></div>
+    <div class="icon">📖</div>
+    <h3>正式教材<br>协作</h3>
+    <div class="repo">DuoQilai/ruyi-riscv-linux-book</div>
+    <div class="desc">进入老师主导的教材仓协作。重整仓库结构，写完第 1、2 章讲义和实验，附示例代码。</div>
+    <div class="tags"><span class="tag">6月</span><span class="tag">协作者</span><span class="tag">2 章教案</span></div>
   </div>
 </div>
 <div class="bottom-note">以下按项目逐一展开，<strong>非按月</strong></div>

@@ -5,20 +5,22 @@
 <title>丁冯德 · 实习工作总结 2026.03–06</title>
 <script>
   window.DECK_MANIFEST = [
-    { file: "slides/01-cover.html",              label: "封面" },
-    { file: "slides/02-overview.html",           label: "项目全景图" },
-    { file: "slides/03-licheepi4a.html",         label: "LicheePi 4A · RuyiSDK Tinn 移植验证" },
-    { file: "slides/04-board-frontend-1.html",   label: "Board Docs ① 站点搭建" },
-    { file: "slides/05-board-frontend-2.html",   label: "Board Docs ② 插件集成" },
-    { file: "slides/06-board-frontend-3.html",   label: "Board Docs ③ CI 与运维" },
-    { file: "slides/07-opensiliconbet.html",     label: "OpenSiliconBet · 中科院公众科学日" },
-    { file: "slides/08-embedded-course.html",    label: "RISC-V 嵌入式课程大纲" },
-    { file: "slides/09-summary.html",            label: "技术栈与仓库总览" },
+    { file: "slides/01-cover.html",              label: "封面",                         short: "封面" },
+    { file: "slides/02-overview.html",           label: "项目全景图",                   short: "全景" },
+    { file: "slides/03-licheepi4a.html",         label: "LicheePi 4A · RuyiSDK Tinn 移植验证", short: "板子测试" },
+    { file: "slides/04-board-frontend-1.html",   label: "Board Docs ① 站点搭建",        short: "文档站①" },
+    { file: "slides/05-board-frontend-2.html",   label: "Board Docs ② 插件集成",        short: "文档站②" },
+    { file: "slides/06-board-frontend-3.html",   label: "Board Docs ③ CI 与运维",       short: "文档站③" },
+    { file: "slides/07-opensiliconbet.html",     label: "OpenSiliconBet · 中科院公众科学日", short: "三国杀" },
+    { file: "slides/08-embedded-course.html",    label: "自研课程大纲 · riscv-embedded-course", short: "课程草稿" },
+    { file: "slides/09-riscv-linux-book.html",     label: "正式教材协作 · ruyi-riscv-linux-book", short: "正式教材" },
+    { file: "slides/10-summary.html",            label: "项目仓库总览",                 short: "总结" },
   ];
   window.DECK_WIDTH = 1920;
   window.DECK_HEIGHT = 1080;
   window.GALLERY_CARD_W = 300;
   window.GALLERY_DRIFT_SECONDS = 80;
+  window.DECK_PROGRESS_H = 58;
 </script>
 
 <style>
@@ -27,7 +29,6 @@
 
   .overview { position: fixed; inset: 0; }
   body[data-mode="present"] .overview { display: none; }
-  body[data-mode="present"] .start-btn { display: none; }
   body[data-mode="overview"] #present-ui { display: none; }
   body[data-ov="grid"]    #ov-gallery { display: none; }
   body[data-ov="gallery"] #ov-grid    { display: none; }
@@ -82,25 +83,49 @@
   #ov-gallery .card:hover .num { opacity: 1; }
 
   .overview-title { position: fixed; top: 24px; left: 0; right: 0; text-align: center; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; z-index: 40; pointer-events: none; }
-  body[data-ov="grid"]    .overview-title { color: #94a3b8; opacity: 0.66; }
-  body[data-ov="gallery"] .overview-title { color: rgba(244,238,224,0.7); text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
-
-  .start-btn { position: fixed; bottom: 26px; right: 26px; border: 0; padding: 13px 24px; border-radius: 999px; font-size: 15px; font-family: inherit; letter-spacing: 0.04em; cursor: pointer; z-index: 200; transition: transform .18s, box-shadow .18s; }
-  body[data-ov="grid"]    .start-btn { background: #f0b429; color: #0a0e1a; box-shadow: 0 8px 28px rgba(240,180,41,0.28); }
-  body[data-ov="gallery"] .start-btn { background: #f4eee0; color: #1a1712; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-  .start-btn:hover { transform: translateY(-2px); }
-
-  /* ════════ 演示模式 ════════ */
   #stage { position: fixed; top: 50%; left: 50%; transform-origin: top left; will-change: transform; background: #0a0e1a; box-shadow: 0 10px 60px rgba(0,0,0,0.6); }
   #stage iframe { width: 100%; height: 100%; border: 0; display: block; background: #0a0e1a; }
-  .counter { position: fixed; bottom: 20px; right: 20px; background: rgba(0,0,0,0.65); color: #fff; padding: 6px 14px; border-radius: 999px; font-size: 13px; letter-spacing: 0.05em; font-variant-numeric: tabular-nums; z-index: 100; opacity: 0.7; }
-  .counter .label { color: rgba(255,255,255,0.7); margin-left: 8px; }
+  .counter { display: none; }
+  .progress-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; height: 58px;
+    background: rgba(6, 8, 14, 0.94); border-top: 1px solid rgba(255,255,255,0.08);
+    z-index: 120; display: flex; align-items: stretch;
+    backdrop-filter: blur(10px);
+  }
+  body[data-mode="overview"] .progress-bar { display: none; }
+  .progress-track { flex: 1; display: flex; gap: 3px; padding: 8px 14px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .progress-track::-webkit-scrollbar { display: none; }
+  .progress-seg {
+    flex: 1; min-width: 52px; border: 0; background: transparent; cursor: pointer;
+    display: flex; flex-direction: column; align-items: stretch; gap: 4px;
+    padding: 2px 0; font-family: inherit; color: #64748b; transition: color .2s, background .2s;
+    border-radius: 4px;
+  }
+  .progress-seg .seg-bar { height: 3px; border-radius: 2px; background: rgba(255,255,255,0.08); overflow: hidden; }
+  .progress-seg .seg-bar i { display: block; height: 100%; width: 0; transition: width .22s, background .22s; }
+  .progress-seg.done .seg-bar i { width: 100%; background: rgba(240,180,41,0.35); }
+  .progress-seg.active {
+    color: #fcd34d; background: rgba(240,180,41,0.14);
+  }
+  .progress-seg.active .seg-bar i { width: 100%; background: #f0b429; }
+  .progress-seg.done { color: #94a3b8; }
+  .progress-seg:hover { color: #e2e8f0; }
+  .progress-seg .seg-label {
+    font-size: 10px; line-height: 1.2; text-align: center;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .progress-meta {
+    flex: 0 0 auto; display: flex; align-items: center; padding: 0 18px 0 4px;
+    font-size: 13px; color: #94a3b8; font-variant-numeric: tabular-nums;
+    border-left: 1px solid rgba(255,255,255,0.06); white-space: nowrap;
+  }
+  .progress-meta strong { color: #f0b429; font-weight: 700; margin-right: 2px; }
   .overview-btn { position: fixed; top: 20px; left: 20px; background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.85); border: 0; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-family: inherit; cursor: pointer; z-index: 100; opacity: 0.6; }
   .overview-btn:hover { opacity: 1; }
   .nav-zone { position: fixed; top: 0; bottom: 0; width: 15%; cursor: pointer; z-index: 50; }
   .nav-zone.left { left: 0; } .nav-zone.right { right: 0; }
   .nav-zone.top { left: 0; right: 0; top: 0; height: 12%; width: 100%; }
-  .nav-zone.bottom { left: 0; right: 0; bottom: 0; height: 12%; width: 100%; }
+  .nav-zone.bottom { left: 0; right: 0; bottom: 58px; height: 10%; width: 100%; }
   .nav-hint { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; font-size: 22px; opacity: 0; transition: opacity .2s; }
   .nav-zone.left .nav-hint { left: 20px; } .nav-zone.right .nav-hint { right: 20px; }
   .nav-zone.top .nav-hint { top: 16px; left: 50%; transform: translateX(-50%); }
@@ -112,13 +137,13 @@
     html, body { background: #fff; overflow: visible; height: auto; }
     body[data-mode] .overview { display: none !important; }
     #stage { position: static; transform: none !important; box-shadow: none; }
-    .counter, .nav-zone, .overview-btn, .start-btn { display: none !important; }
+    .counter, .nav-zone, .overview-btn, .progress-bar { display: none !important; }
     .print-stack { display: block; }
     .print-stack iframe { width: 1920px; height: 1080px; page-break-after: always; display: block; }
   }
 </style>
 </head>
-<body data-mode="overview">
+<body data-mode="present">
 
 <div id="ov-grid" class="overview">
   <div class="overview-title">Overview · 点击任意页进入演示</div>
@@ -131,7 +156,6 @@
   <div class="overview-title">Infinite Gallery · 悬停暂停 · 点击任意页进入演示</div>
 </div>
 
-<button class="start-btn" id="startBtn">▶ 开始演示</button>
 
 <div id="present-ui">
   <div id="stage"><iframe id="frame" src="about:blank"></iframe></div>
@@ -140,7 +164,10 @@
   <div class="nav-zone right" id="navR"><div class="nav-hint">›</div></div>
   <div class="nav-zone top"    id="navT"><div class="nav-hint">▲</div></div>
   <div class="nav-zone bottom" id="navB"><div class="nav-hint">▼</div></div>
-  <div class="counter" id="counter">1 / 1</div>
+  <div class="progress-bar" id="progressBar">
+    <div class="progress-track" id="progressTrack"></div>
+    <div class="progress-meta" id="progressPage"><strong id="progressCurrent">1</strong> / <span id="progressTotal">10</span></div>
+  </div>
 </div>
 
 <div class="print-stack" id="printStack" style="display:none;"></div>
@@ -152,9 +179,12 @@
   const deck = window.DECK_MANIFEST || [];
   const CARD_W = window.GALLERY_CARD_W || 300;
   const DRIFT_SEC = window.GALLERY_DRIFT_SECONDS || 80;
+  const PROGRESS_H = window.DECK_PROGRESS_H || 58;
   const stage = document.getElementById('stage');
   const frame = document.getElementById('frame');
   const counter = document.getElementById('counter');
+  const progressPage = document.getElementById('progressPage');
+  const progressTrack = document.getElementById('progressTrack');
   const printStack = document.getElementById('printStack');
   const wall = document.getElementById('wall');
   const gallery = document.getElementById('gallery');
@@ -285,16 +315,55 @@
   }
 
   /* ════════ 演示 ════════ */
+  function shortLabel(item, idx) {
+    return item.short || item.label || ('第' + (idx + 1) + '页');
+  }
+
+  function buildProgressBar() {
+    if (!progressTrack) return;
+    progressTrack.innerHTML = '';
+    deck.forEach((item, i) => {
+      const seg = document.createElement('button');
+      seg.type = 'button';
+      seg.className = 'progress-seg';
+      seg.title = (i + 1) + '. ' + (item.label || shortLabel(item, i));
+      seg.innerHTML =
+        '<span class="seg-bar"><i></i></span>' +
+        '<span class="seg-label">' + shortLabel(item, i) + '</span>';
+      seg.addEventListener('click', (e) => { e.stopPropagation(); show(i); });
+      progressTrack.appendChild(seg);
+    });
+    updateProgressBar(current);
+  }
+
+  function updateProgressBar(idx) {
+    if (!progressTrack) return;
+    const cur = document.getElementById('progressCurrent');
+    const total = document.getElementById('progressTotal');
+    if (cur) cur.textContent = String(idx + 1);
+    if (total) total.textContent = String(deck.length);
+    const segs = progressTrack.querySelectorAll('.progress-seg');
+    segs.forEach((seg, i) => {
+      seg.classList.toggle('active', i === idx);
+      seg.classList.toggle('done', i < idx);
+    });
+    const active = segs[idx];
+    if (active) active.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+  }
+
   function fit() {
-    const s = Math.min(innerWidth / W, innerHeight / H);
-    stage.style.transform = 'translate(' + ((innerWidth - W * s) / 2) + 'px, ' + ((innerHeight - H * s) / 2) + 'px) scale(' + s + ')';
+    const s = Math.min(innerWidth / W, (innerHeight - PROGRESS_H) / H);
+    const ox = (innerWidth - W * s) / 2;
+    const oy = (innerHeight - PROGRESS_H - H * s) / 2;
+    stage.style.transform = 'translate(' + ox + 'px, ' + oy + 'px) scale(' + s + ')';
     stage.style.top = '0'; stage.style.left = '0';
   }
   function show(idx) {
     if (idx < 0 || idx >= deck.length) return;
     current = idx;
     if (frame.getAttribute('src') !== deck[idx].file) frame.src = deck[idx].file;
-    counter.innerHTML = (idx + 1) + ' / ' + deck.length + ' <span class="label">' + (deck[idx].label || '') + '</span>';
+    if (counter) counter.innerHTML = (idx + 1) + ' / ' + deck.length;
+    updateProgressBar(idx);
     try { localStorage.setItem(storageKey, String(idx)); } catch (_) {}
     if (location.hash !== '#' + (idx + 1)) history.replaceState(null, '', '#' + (idx + 1));
   }
@@ -313,12 +382,11 @@
       case 'End': e.preventDefault(); show(deck.length - 1); break;
       default: if (e.key >= '1' && e.key <= '9') { const i = parseInt(e.key, 10) - 1; if (i < deck.length) { e.preventDefault(); show(i); } }
     }
-  });
+  }, true);
   document.getElementById('navL').addEventListener('click', prev);
   document.getElementById('navR').addEventListener('click', next);
   document.getElementById('navT').addEventListener('click', prev);
   document.getElementById('navB').addEventListener('click', next);
-  document.getElementById('startBtn').addEventListener('click', () => setMode('present'));
   document.getElementById('overviewBtn').addEventListener('click', () => setMode('overview'));
   let rT;
   window.addEventListener('resize', () => { fit(); clearTimeout(rT); rT = setTimeout(buildOverview, 140); });
@@ -327,10 +395,10 @@
 
   const hashMatch = location.hash.match(/^#(\d+)$/);
   if (hashMatch) current = Math.min(parseInt(hashMatch[1], 10) - 1, deck.length - 1);
-  else { try { const v = parseInt(localStorage.getItem(storageKey), 10); if (!isNaN(v) && v >= 0 && v < deck.length) current = v; } catch (_) {} }
+  else current = 0;
 
-  fit(); show(current);
-  if (hashMatch) setMode('present'); else { setMode('overview'); buildOverview(); }
+  fit(); buildProgressBar(); show(current);
+  setMode('present');
 
   window.addEventListener('beforeprint', () => { printStack.innerHTML = ''; deck.forEach(item => { const f = document.createElement('iframe'); f.src = item.file; printStack.appendChild(f); }); printStack.style.display = 'block'; stage.style.display = 'none'; });
   window.addEventListener('afterprint', () => { printStack.innerHTML = ''; printStack.style.display = 'none'; stage.style.display = ''; });

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>09 · RISC-V Linux 教材协作</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    background: #0a0e1a;
+    font-family: "Noto Serif SC", "PingFang SC", serif;
+    color: #f1f5f9;
+    padding: 85px 120px; position: relative;
+  }
+  .accent-line { position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #f0b429, #f59e0b, #d97706, #f0b429); }
+  .section-num { font-size: 14px; letter-spacing: 0.2em; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 12px; }
+  h2 { font-size: 48px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
+  h2 .gold { color: #f0b429; }
+  .repo-link { font-size: 18px; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 32px; }
+  .content { display: flex; gap: 44px; }
+  .col { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+  .box {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: 26px 30px; border-left: 4px solid #f0b429;
+  }
+  .box h4 { font-size: 20px; font-weight: 700; margin-bottom: 10px; color: #fcd34d; }
+  .box p { font-size: 16px; color: #cbd5e1; line-height: 1.75; }
+  .box ul { list-style: none; margin-top: 8px; }
+  .box li { font-size: 15px; color: #cbd5e1; line-height: 1.75; padding-left: 16px; position: relative; }
+  .box li::before { content: '·'; position: absolute; left: 0; color: #f0b429; font-weight: bold; }
+  .relation {
+    margin-top: 4px; padding: 22px 28px;
+    background: rgba(240,180,41,0.04); border: 1px solid rgba(240,180,41,0.1);
+    border-radius: 12px; font-size: 17px; color: #fef3c7; line-height: 1.7; text-align: center;
+  }
+  .relation strong { color: #f0b429; }
+</style>
+</head>
+<body>
+<div class="accent-line"></div>
+<div class="section-num">PROJECT 04 · 6 月 · 协作</div>
+<h2>RISC-V Linux <span class="gold">正式教材</span>仓库</h2>
+<div class="repo-link">github.com/DuoQilai/ruyi-riscv-linux-book · 老师主导，我参与写教案和整理仓库</div>
+<div class="content">
+  <div class="col">
+    <div class="box">
+      <h4>和自研草稿的关系</h4>
+      <p>我先在自己仓库里写出一版课程大纲做试水。老师认可后，进入这个正式教材仓协作：把结构理顺，把前两章真正写成能上课用的讲义和实验。</p>
+    </div>
+    <div class="box">
+      <h4>重整仓库</h4>
+      <ul>
+        <li>按章、按节分文件夹，每节一份讲义 + 一份实验说明</li>
+        <li>每章配一份整章幻灯片</li>
+        <li>单独放板子参考资料和历史旧稿</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col">
+    <div class="box">
+      <h4>已写完的内容</h4>
+      <ul>
+        <li><strong>第 1 章</strong> 开发环境：怎么装工具、怎么连板子（5 个小节）</li>
+        <li><strong>第 2 章</strong> 工具链与工程：怎么编译、怎么搭项目骨架（6 个小节）</li>
+        <li>附了 hello 程序和项目模板，学生可以直接照着跑</li>
+        <li>讲义和实验各写了两版，最后统一了格式</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h4>板卡参考</h4>
+      <p>整理了 LicheePi 4A 和 K1 两块板子的说明，上课选板子时方便对照。</p>
+    </div>
+  </div>
+</div>
+<div class="relation">
+  <strong>自研草稿</strong>（riscv-embedded-course）→ 试水定方向 &nbsp;·&nbsp;
+  <strong>正式教材</strong>（ruyi-riscv-linux-book）→ 和老师一起落地成能教的课
+</div>
+</body>
+</html>

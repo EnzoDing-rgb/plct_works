@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>07 · RISC-V 嵌入式课程</title>
+<title>08 · 自研课程大纲</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,87 +18,76 @@
   .section-num { font-size: 14px; letter-spacing: 0.2em; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 12px; }
   h2 { font-size: 48px; font-weight: 900; line-height: 1.2; margin-bottom: 8px; }
   h2 .gold { color: #f0b429; }
-  .repo-link { font-size: 18px; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 36px; }
+  .repo-link { font-size: 18px; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 32px; }
   .content { display: flex; gap: 44px; }
   .col { flex: 1; display: flex; flex-direction: column; gap: 20px; }
-  .phase-box {
+  .box {
     background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
     border-radius: 14px; padding: 26px 30px; border-left: 4px solid #f0b429;
   }
-  .phase-box.may { border-left-color: #f0b429; }
-  .phase-box h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
-  .phase-box .date { font-size: 13px; color: #f0b429; font-family: system-ui, sans-serif; margin-bottom: 10px; }
-  .phase-box.may .date { color: #f0b429; }
-  .phase-box ul { list-style: none; }
-  .phase-box li { font-size: 15px; color: #cbd5e1; line-height: 1.75; padding-left: 16px; position: relative; }
-  .phase-box li::before { content: '·'; position: absolute; left: 0; color: #f0b429; font-weight: bold; }
-  .phase-box.may li::before { color: #f0b429; }
+  .box h4 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+  .box ul { list-style: none; }
+  .box li { font-size: 15px; color: #cbd5e1; line-height: 1.75; padding-left: 16px; position: relative; }
+  .box li::before { content: '·'; position: absolute; left: 0; color: #f0b429; font-weight: bold; }
   .stat-strip {
     margin-top: 8px; display: flex; gap: 28px; justify-content: center;
     padding: 22px; background: rgba(240,180,41,0.04);
     border-radius: 12px; border: 1px solid rgba(240,180,41,0.08);
   }
   .stat-item { text-align: center; }
-  .stat-item .num { font-size: 36px; font-weight: 900; color: #fcd34d; font-family: system-ui, sans-serif; }
+  .stat-item .num { font-size: 32px; font-weight: 900; color: #fcd34d; font-family: system-ui, sans-serif; }
   .stat-item .lbl { font-size: 14px; color: #94a3b8; margin-top: 4px; }
 </style>
 </head>
 <body>
 <div class="accent-line"></div>
-<div class="section-num">PROJECT 03 · 5 月 – 6 月</div>
-<h2>RISC-V <span class="gold">嵌入式系统与边缘推理</span>课程大纲</h2>
-<div class="repo-link">github.com/EnzoDing-rgb/riscv-embedded-course · 已通过网页在线发布</div>
+<div class="section-num">PROJECT 03 · 5 月 – 6 月 · 自研</div>
+<h2>《RISC-V Linux 嵌入式实践》<span class="gold">课程草稿</span></h2>
+<div class="repo-link">github.com/EnzoDing-rgb/riscv-embedded-course · 我自己先写的一版，用来试水定方向</div>
 <div class="content">
   <div class="col">
-    <div class="phase-box may">
-      <h4>5 月 · 开始写大纲</h4>
-      <div class="date">5.29 · 建仓库</div>
+    <div class="box">
+      <h4>这门课讲什么</h4>
       <ul>
-        <li>设计了课程的实验环境架构</li>
-        <li>写了 RuyiSDK 工具链的使用说明</li>
-        <li>画了架构图和环境配置</li>
-        <li>搭了网页版大纲的框架</li>
+        <li>在 RISC-V Linux 开发板上，用 RuyiSDK 和 C 语言做嵌入式小项目</li>
+        <li>有术语表、章节安排、要买什么硬件、三个递进的动手项目</li>
+        <li>全程用一块板子完成，不搞太复杂的环境切换</li>
       </ul>
     </div>
-    <div class="phase-box">
-      <h4>6 月 11–12 日 · 细化内容</h4>
-      <div class="date">6.11–6.12 · 继续改大纲</div>
+    <div class="box">
+      <h4>6 月主要推进</h4>
       <ul>
-        <li>写了 10 章的网页版大纲，能本地预览</li>
-        <li>精简了物料清单和说明文档</li>
-        <li>对齐了第 1 到第 7 章的内容</li>
+        <li>用大白话把大纲重写了一遍</li>
+        <li>第三个毕业项目改成「语音关键词识别 + 控 LED 灯」</li>
+        <li>加了智能环境监测盒作为综合项目说明</li>
+        <li>精简物料清单，把第 1 到第 7 章内容对齐</li>
       </ul>
     </div>
   </div>
   <div class="col">
-    <div class="phase-box">
-      <h4>6 月 5 日 · 大幅改写</h4>
-      <div class="date">6.5 · 连改 6 次</div>
+    <div class="box">
+      <h4>怎么发布出去的</h4>
       <ul>
-        <li>重新组织了课程结构，加了进阶内容附录</li>
-        <li>列出了推荐教材</li>
-        <li>用通俗语言重写了一遍</li>
-        <li>去掉了特定系统的引用，改成通用的</li>
-        <li>精简了实验流程，第三个项目改成语音关键词识别 + LED 灯控制</li>
+        <li>大纲做成网页，挂到 GitHub Pages</li>
+        <li>打开链接就能看，不用本地装东西</li>
+        <li>README 也改成普通人能看懂的说明</li>
+        <li>填了课程进度表，方便和老师对齐</li>
       </ul>
     </div>
-    <div class="phase-box">
-      <h4>6 月 21–22 日 · 发布上线</h4>
-      <div class="date">6.21–6.22 · 部署到网页</div>
+    <div class="box">
+      <h4>和正式教材的关系</h4>
       <ul>
-        <li>加了 IoT 毕业项目说明</li>
-        <li>README 用通俗语言重写</li>
-        <li>修复了网页跳转和文件追踪的问题</li>
-        <li>去掉了本地启动脚本，统一用网页访问</li>
+        <li>这版是我独立研发的草稿，用来试结构和写法</li>
+        <li>方向确定后，进入老师的正式教材仓继续写（见下一页）</li>
       </ul>
     </div>
   </div>
 </div>
 <div class="stat-strip">
-  <div class="stat-item"><div class="num">19</div><div class="lbl">Commits</div></div>
-  <div class="stat-item"><div class="num">10 章</div><div class="lbl">课程体系</div></div>
-  <div class="stat-item"><div class="num">3 项目</div><div class="lbl">练手+毕业</div></div>
-  <div class="stat-item"><div class="num">GitHub Pages</div><div class="lbl">在线发布</div></div>
+  <div class="stat-item"><div class="num">10 章</div><div class="lbl">课程结构</div></div>
+  <div class="stat-item"><div class="num">3 个项目</div><div class="lbl">练手到毕业</div></div>
+  <div class="stat-item"><div class="num">网页在线</div><div class="lbl">GitHub Pages</div></div>
+  <div class="stat-item"><div class="num">自研草稿</div><div class="lbl">试水定方向</div></div>
 </div>
 </body>
 </html>
