@@ -29,7 +29,7 @@
 4. ch02 lab（本机假温控上机，本章不上板）：https://duoqilai.github.io/ruyi-riscv-linux-book/chapters/ch02/lab.html
 5. ch03 lab（继电器风扇上板已验）：https://duoqilai.github.io/ruyi-riscv-linux-book/chapters/ch03/lab.html
 6. ch04 lab（DHT22 温控上板已验）：https://duoqilai.github.io/ruyi-riscv-linux-book/chapters/ch04/lab.html
-7. 组内课程介绍 deck（PPT）：https://duoqilai.github.io/ruyi-riscv-linux-book/deck/
+7. 组内课程介绍 deck（PPT，仅仓库内、不上 Pages）：https://github.com/DuoQilai/ruyi-riscv-linux-book/tree/enzo/deck
 8. ch04 DHT22 板上读通 commit：https://github.com/DuoQilai/ruyi-riscv-linux-book/commit/70022ac
 9. ch03 relay-toggle 板上验证 commit：https://github.com/DuoQilai/ruyi-riscv-linux-book/commit/feccdce
 10. 组内课程介绍 deck commit：https://github.com/DuoQilai/ruyi-riscv-linux-book/commit/b325a10
