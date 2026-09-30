@@ -8,7 +8,15 @@
 
 ### 本月工作总结
 
-本月以 ruyi-riscv-linux-book 为主线：**第 1–4 章在课程站上线，并在 RISC-V 开发者社区（ruyisdk.cn）发布系列帖**；每章收成三个递进实验，补齐板上证据。ch05（网络与 MQTT）、ch06（线程与协同）与综合项目（DeepSeek Harness / 端侧 Agent）均已合入，板上已验证。
+本月在 RISC-V 开发者社区（ruyisdk.cn）发出荔枝派 4A 课程系列帖，作为第 1–4 章对外跟做入口。课程仓库侧，ch05、ch06 与综合项目均已合入，板上已验证。
+
+### 如意社区发帖
+
+- 01 环境与工具链：https://ruyisdk.cn/t/topic/2834
+- 02 够用的 C：https://ruyisdk.cn/t/topic/2842
+- 03 GPIO 与执行器：https://ruyisdk.cn/t/topic/2844
+- 04 串口对话与温控：https://ruyisdk.cn/t/topic/2854
+- 04 本章实验 · 三个实验：https://ruyisdk.cn/t/topic/2866
 
 ### 本月提交的PR
 
